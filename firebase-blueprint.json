@@ -1,0 +1,48 @@
+{
+  "entities": {
+    "Enquiry": {
+      "title": "Enquiry",
+      "description": "A contact request from a client.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "company": { "type": "string" },
+        "country": { "type": "string" },
+        "phone": { "type": "string" },
+        "email": { "type": "string" },
+        "projectType": { "type": "string" },
+        "budget": { "type": "string" },
+        "timeline": { "type": "string" },
+        "message": { "type": "string" },
+        "attachmentUrl": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["name", "company", "country", "phone", "email", "projectType", "message", "createdAt"]
+    },
+    "Application": {
+      "title": "Application",
+      "description": "A job application.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "role": { "type": "string" },
+        "cvUrl": { "type": "string" },
+        "coverNote": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["name", "email", "phone", "role", "createdAt"]
+    }
+  },
+  "firestore": {
+    "enquiries/{enquiryId}": {
+      "schema": { "$ref": "#/entities/Enquiry" },
+      "description": "Stores submitted contact enquiries."
+    },
+    "applications/{applicationId}": {
+      "schema": { "$ref": "#/entities/Application" },
+      "description": "Stores completed job applications."
+    }
+  }
+}
