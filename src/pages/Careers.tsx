@@ -51,7 +51,7 @@ export default function Careers() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-[#313B44] mb-4">Join Our Team</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-[#111111] mb-4">Join Our Team</h1>
           <div className="w-16 h-1 bg-[#F39C12] mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Build your career with an EPC firm that prioritizes safety, quality, and continuous development across Nigeria's industrial hubs.
@@ -62,66 +62,66 @@ export default function Careers() {
           
           {/* Vacancies */}
           <div>
-            <h2 className="text-[24px] font-bold text-[#313B44] mb-[30px]">Open Roles</h2>
+            <h2 className="text-[24px] font-bold text-[#111111] mb-[30px]">Open Roles</h2>
             <div className="space-y-[15px]">
               {roles.map(role => (
                 <div key={role.id} onClick={() => setSelectedRole(role.title)} className={cn("p-[25px] bg-white border cursor-pointer hover:shadow-md transition-shadow relative overflow-hidden", selectedRole === role.title ? "border-[#0072BB]" : "border-[#eee]")}>
-                  {selectedRole === role.title && <div className="absolute top-0 left-0 w-1 h-full bg-[#0072BB]" />}
+                  {selectedRole === role.title && <div className="absolute top-0 left-0 w-1 h-full bg-[#F39C12]" />}
                   <div className="flex justify-between items-start mb-[10px]">
-                    <h3 className="text-[18px] font-bold text-[#313B44]">{role.title}</h3>
+                    <h3 className="text-[18px] font-bold text-[#111111]">{role.title}</h3>
                     <span className="bg-[#F4F4F4] text-[#666] text-[9px] font-bold px-[8px] py-[4px] uppercase tracking-widest">{role.type}</span>
                   </div>
                   <div className="flex items-center gap-[8px] text-[12px] text-[#888] mb-[15px] font-bold uppercase tracking-wide">
-                    <MapPin size={14} className="text-[#DA291C]" /> {role.loc}
+                    <MapPin size={14} className="text-[#111111]" /> {role.loc}
                   </div>
                   <p className="text-[#666] text-[13px] leading-[1.6]">{role.desc}</p>
                 </div>
               ))}
             </div>
 
-            <div className="mt-[40px] bg-[#313B44] text-white p-[40px] border-l-[4px] border-[#F39C12]">
+            <div className="mt-[40px] bg-[#1E293B] text-white p-[40px] border-l-[4px] border-[#F39C12]">
               <h3 className="text-[18px] font-bold mb-[15px]">Life at Quadrupletech</h3>
-              <p className="text-[13px] text-white/80 leading-[1.6] mb-[20px]">
+              <p className="text-[13px] text-[#475569] leading-[1.6] mb-[20px]">
                 Our culture is built on four pillars: Quality, Safety, Diversity, and Continuous Development. 
                 We operate in highly demanding environments, which means we invest heavily in training and certification for our team members. 
                 When you join us, you join an engineering family committed to zero-harm and operational excellence.
               </p>
               <div className="flex -space-x-[10px]">
                 {[1,2,3,4].map(i => (
-                  <img key={i} className="w-[40px] h-[40px] rounded-full border-2 border-[#313B44]" src={`https://i.pravatar.cc/100?img=${i+10}`} alt="Employee" />
+                  <img key={i} className="w-[40px] h-[40px] rounded-full border-2 border-[#E2E8F0]" src={`https://i.pravatar.cc/100?img=${i+10}`} alt="Employee" />
                 ))}
               </div>
             </div>
           </div>
 
           {/* Application Form */}
-          <div className="bg-white p-[40px] border border-[#eee] border-t-[4px] border-t-[#DA291C] h-fit sticky top-[100px] shadow-lg">
-            <h2 className="text-[24px] font-bold text-[#313B44] mb-[10px]">Apply Now</h2>
-            <p className="text-[12px] text-[#666] mb-[30px] uppercase tracking-wide font-bold">Selected role: <span className="text-[#0072BB]">{selectedRole}</span></p>
+          <div className="bg-white p-[40px] border border-[#eee] border-t-[4px] border-t-[#F39C12] h-fit sticky top-[100px] shadow-lg">
+            <h2 className="text-[24px] font-bold text-[#111111] mb-[10px]">Apply Now</h2>
+            <p className="text-[12px] text-[#666] mb-[30px] uppercase tracking-wide font-bold">Selected role: <span className="text-[#111111]">{selectedRole}</span></p>
 
             {status === 'success' ? (
               <div className="text-center py-12">
                 <CheckCircle2 className="w-16 h-16 text-emerald-500 mx-auto mb-4" />
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Application Received</h3>
                 <p className="text-gray-600">Thank you. Our HR team will review your CV and contact you shortly if your profile matches our requirements.</p>
-                <button onClick={() => setStatus('idle')} className="mt-6 text-[#0072BB] font-semibold">Submit another application</button>
+                <button onClick={() => setStatus('idle')} className="mt-6 text-[#111111] font-semibold">Submit another application</button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-[20px]">
                   <div>
                     <label className="block text-[11px] font-bold text-[#666] uppercase tracking-wide mb-[8px]" htmlFor="name">Full Name *</label>
-                    <input required id="name" type="text" value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} className="w-full px-[15px] py-[12px] bg-[#F4F4F4] border border-[#eee] text-[#313B44] text-[14px] focus:bg-white focus:border-[#0072BB] transition-colors outline-none" />
+                    <input required id="name" type="text" value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} className="w-full px-[15px] py-[12px] bg-[#F4F4F4] border border-[#eee] text-[#111111] text-[14px] focus:bg-white focus:border-[#0072BB] transition-colors outline-none" />
                   </div>
                   <div>
                     <label className="block text-[11px] font-bold text-[#666] uppercase tracking-wide mb-[8px]" htmlFor="phone">Phone Number *</label>
-                    <input required id="phone" type="tel" value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} className="w-full px-[15px] py-[12px] bg-[#F4F4F4] border border-[#eee] text-[#313B44] text-[14px] focus:bg-white focus:border-[#0072BB] transition-colors outline-none" />
+                    <input required id="phone" type="tel" value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} className="w-full px-[15px] py-[12px] bg-[#F4F4F4] border border-[#eee] text-[#111111] text-[14px] focus:bg-white focus:border-[#0072BB] transition-colors outline-none" />
                   </div>
                 </div>
 
                 <div>
                   <label className="block text-[11px] font-bold text-[#666] uppercase tracking-wide mb-[8px]" htmlFor="email">Email Address *</label>
-                  <input required id="email" type="email" value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} className="w-full px-[15px] py-[12px] bg-[#F4F4F4] border border-[#eee] text-[#313B44] text-[14px] focus:bg-white focus:border-[#0072BB] transition-colors outline-none" />
+                  <input required id="email" type="email" value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} className="w-full px-[15px] py-[12px] bg-[#F4F4F4] border border-[#eee] text-[#111111] text-[14px] focus:bg-white focus:border-[#0072BB] transition-colors outline-none" />
                 </div>
 
                 <div>
@@ -137,13 +137,13 @@ export default function Careers() {
 
                 <div>
                   <label className="block text-[11px] font-bold text-[#666] uppercase tracking-wide mb-[8px]" htmlFor="cover">Cover Note / Overview</label>
-                  <textarea id="cover" rows={4} value={formData.coverNote} onChange={e => setFormData({...formData, coverNote: e.target.value})} className="w-full px-[15px] py-[12px] bg-[#F4F4F4] border border-[#eee] text-[#313B44] text-[14px] focus:bg-white focus:border-[#0072BB] transition-colors outline-none" placeholder="Briefly describe your experience..."></textarea>
+                  <textarea id="cover" rows={4} value={formData.coverNote} onChange={e => setFormData({...formData, coverNote: e.target.value})} className="w-full px-[15px] py-[12px] bg-[#F4F4F4] border border-[#eee] text-[#111111] text-[14px] focus:bg-white focus:border-[#0072BB] transition-colors outline-none" placeholder="Briefly describe your experience..."></textarea>
                 </div>
 
                 <button 
                   disabled={status !== 'idle'} 
                   type="submit" 
-                  className="w-full py-[15px] bg-[#313B44] hover:bg-[#F39C12] hover:text-[#313B44] text-white font-bold transition-colors shadow-md disabled:opacity-70 disabled:cursor-not-allowed flex justify-center items-center gap-2 text-[13px] uppercase tracking-wide border-none"
+                  className="w-full py-[15px] bg-white hover:bg-[#0072BB] hover:text-white text-[#111111] font-bold transition-colors shadow-md disabled:opacity-70 disabled:cursor-not-allowed flex justify-center items-center gap-2 text-[13px] uppercase tracking-wide border-none"
                 >
                   {status === 'idle' ? 'Submit Application' : status === 'uploading' ? 'Uploading CV...' : 'Submitting...'}
                 </button>

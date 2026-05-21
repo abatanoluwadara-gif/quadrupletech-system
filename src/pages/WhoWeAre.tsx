@@ -20,12 +20,12 @@ export default function WhoWeAre() {
   return (
     <div className="pt-24 pb-20 bg-white">
       {/* Hero */}
-      <div className="relative h-[400px] mb-20 bg-[#313B44] flex items-center justify-center overflow-hidden">
+      <div className="relative h-[400px] mb-20 bg-white flex items-center justify-center overflow-hidden">
         <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="About Us" className="absolute inset-0 w-full h-full object-cover opacity-20" />
         <div className="relative z-10 text-center px-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Who We Are</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-[#111111] mb-4">Who We Are</h1>
           <div className="w-16 h-1 bg-[#F39C12] mx-auto"></div>
-          <p className="mt-4 text-xl text-[#F39C12] font-medium max-w-2xl mx-auto">
+          <p className="mt-4 text-xl text-[#111111] font-medium max-w-2xl mx-auto">
             Executing EPC contracts using the latest state-of-the-art technology.
           </p>
         </div>
@@ -36,7 +36,7 @@ export default function WhoWeAre() {
         {/* About Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24 items-center">
           <div>
-            <h2 className="text-3xl font-bold text-[#313B44] mb-6">Our Narrative</h2>
+            <h2 className="text-3xl font-bold text-[#111111] mb-6">Our Narrative</h2>
             <p className="text-gray-600 mb-4 leading-relaxed">
               Founded in 2016, <strong>Quadrupletech Engineering and Services Limited</strong> is a CAC-incorporated EPC (Engineering, Procurement, and Construction) firm headquartered at 5 Ayegbami Street, Idotun, Lagos Free Zone, Ibeju-Lekki, Lagos.
             </p>
@@ -45,15 +45,15 @@ export default function WhoWeAre() {
             </p>
             <div className="bg-gray-50 p-6 border-l-4 border-[#0072BB]">
               <div className="flex gap-4">
-                <Target className="text-[#0072BB] shrink-0" size={24} />
-                <p className="text-[#313B44] font-medium italic">
+                <Target className="text-[#111111] shrink-0" size={24} />
+                <p className="text-[#111111] font-medium italic">
                   "To be the premier engineering partner of choice for multinational energy, construction, and manufacturing operators."
                 </p>
               </div>
             </div>
           </div>
           <div className="relative">
-            <div className="absolute inset-0 bg-[#F39C12] translate-x-4 translate-y-4 rounded-lg"></div>
+            <div className="absolute inset-0 bg-[#0072BB] translate-x-4 translate-y-4 rounded-lg"></div>
             <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Team at site" className="relative z-10 rounded-lg shadow-xl w-full h-[400px] object-cover" />
           </div>
         </div>
@@ -61,15 +61,15 @@ export default function WhoWeAre() {
         {/* Management Team */}
         <div className="mb-24">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-[#313B44] mb-4">Our Management</h2>
+            <h2 className="text-3xl font-bold text-[#111111] mb-4">Our Management</h2>
             <div className="w-16 h-1 bg-[#F39C12] mx-auto"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {management.map((m) => (
               <motion.div key={m.name} whileHover={{ y: -5 }} className="bg-white border text-center p-8 shadow-sm">
                 <img src={m.img} alt={m.name} className="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-gray-50" />
-                <h3 className="text-xl font-bold text-[#313B44] mb-2">{m.name}</h3>
-                <p className="text-[#0072BB] font-medium text-sm mb-4">{m.title}</p>
+                <h3 className="text-xl font-bold text-[#111111] mb-2">{m.name}</h3>
+                <p className="text-[#111111] font-medium text-sm mb-4">{m.title}</p>
                 <p className="text-gray-500 text-sm">{m.bio}</p>
               </motion.div>
             ))}
@@ -79,14 +79,14 @@ export default function WhoWeAre() {
         {/* Industries We Serve */}
         <div className="mb-24 bg-[#F4F4F4] p-8 md:p-12 border-t-4 border-[#0072BB]">
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-[#313B44] mb-4">Industries We Serve</h2>
+            <h2 className="text-3xl font-bold text-[#111111] mb-4">Industries We Serve</h2>
             <p className="text-[#666]">Bringing domain expertise to highly regulated, complex verticals.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[30px]">
             {industries.map((ind) => (
               <div key={ind.title} className="bg-white p-[25px] border border-[#eee] hover:border-[#0072BB] transition-colors hover:shadow-md">
-                <Lightbulb className="text-[#0072BB] mb-[15px]" size={28} />
-                <h4 className="text-[18px] font-bold text-[#313B44] mb-[10px]">{ind.title}</h4>
+                <Lightbulb className="text-[#111111] mb-[15px]" size={28} />
+                <h4 className="text-[18px] font-bold text-[#111111] mb-[10px]">{ind.title}</h4>
                 <p className="text-[13px] leading-[1.6] text-[#666] m-0">{ind.desc}</p>
               </div>
             ))}
@@ -95,7 +95,7 @@ export default function WhoWeAre() {
 
         {/* Clients & Partners */}
         <div className="mb-24">
-          <h2 className="text-3xl font-bold text-[#313B44] mb-12 text-center">Trusted By</h2>
+          <h2 className="text-3xl font-bold text-[#111111] mb-12 text-center">Trusted By</h2>
           
           <div className="bg-white border rounded-xl overflow-hidden p-8 flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70 grayscale">
             {/* Logos text placeholders if images aren't available */}
@@ -107,8 +107,8 @@ export default function WhoWeAre() {
           </div>
 
           <div className="mt-16 text-center max-w-3xl mx-auto">
-             <h3 className="text-xl font-bold text-[#313B44] mb-4 flex items-center justify-center gap-2">
-              <Users className="text-[#F39C12]" /> Strategic Partners
+             <h3 className="text-xl font-bold text-[#111111] mb-4 flex items-center justify-center gap-2">
+              <Users className="text-[#111111]" /> Strategic Partners
              </h3>
              <p className="text-gray-600 text-sm">
                We frequently execute large-scale consortium bids and joint ventures with partners like <strong>Ucho James Engineering Limited</strong> to pool resources, mitigate risks, and guarantee successful delivery on massive infrastructure projects.
@@ -117,27 +117,27 @@ export default function WhoWeAre() {
         </div>
 
         {/* Quality Policy */}
-        <div className="bg-[#313B44] text-white p-8 md:p-16 relative overflow-hidden border-t-4 border-[#DA291C]">
+        <div className="bg-white text-[#111111] p-8 md:p-16 relative overflow-hidden border-t-4 border-[#0072BB]">
           <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
           <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-[32px] font-bold mb-[24px]">Our Quality Policy</h2>
-              <p className="text-[14px] text-white/90 mb-[24px] leading-[1.6]">
+              <p className="text-[14px] text-[#334155] mb-[24px] leading-[1.6]">
                 Aligned with ISO 9001:2000 standards, our quality commitments ensure customer requirements are not just met, but exceeded. Quality is a mandatory compliance requirement for every employee and sub-contractor on site.
               </p>
               <ul className="space-y-[12px] mb-[32px]">
                 {['Measurable objectives set per project', 'Customer requirements as the benchmark', 'Mandatory safety compliance', 'Continuous skill development'].map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-[13px] text-white/90 tracking-wide font-medium">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#F39C12]" /> {item}
+                  <li key={item} className="flex items-center gap-3 text-[13px] text-[#334155] tracking-wide font-medium">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#0072BB]" /> {item}
                   </li>
                 ))}
               </ul>
-              <button className="flex items-center gap-2 bg-[#F39C12] hover:bg-white text-[#313B44] font-bold px-[28px] py-[12px] rounded-sm transition-colors text-[14px] uppercase border-none">
+              <button className="flex items-center gap-2 bg-[#0072BB] hover:bg-[#1E293B] hover:text-[#FFFFFF] text-white font-bold px-[28px] py-[12px] rounded-sm transition-colors text-[14px] uppercase border-none">
                 <Download size={18} /> Download Quality PDF
               </button>
             </div>
             <div className="hidden md:block">
-              <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Quality inspection" className="rounded-sm shadow-2xl opacity-90 border-[4px] border-[#232B32]" />
+              <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Quality inspection" className="rounded-sm shadow-2xl opacity-90 border-[4px] border-[#E2E8F0]" />
             </div>
           </div>
         </div>

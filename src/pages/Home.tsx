@@ -6,11 +6,11 @@ import { useEffect, useState } from 'react';
 
 const services = [
   { icon: Wrench, title: 'Engineering', desc: 'Design, fabrication, and installation for oil & gas pipe and structural systems.', color: 'border-[#0072BB]' },
-  { icon: ShieldAlert, title: 'Safety Services', desc: 'Fire infrastructure systems, PPE supply, and full-scale safety installations.', color: 'border-[#DA291C]' },
-  { icon: Truck, title: 'Logistics', desc: 'Supply of industrial materials, equipment leasing, and general contractor services.', color: 'border-[#F39C12]' },
-  { icon: GraduationCap, title: 'HSE Training', desc: 'Behaviour-Based Safety, fire drills, and emergency preparedness training.', color: 'border-[#313B44]' },
-  { icon: Building2, title: 'Civil Works', desc: 'Structural erection, renovation, and general civil construction.', color: 'border-slate-400' },
-  { icon: HardHat, title: 'Project Management', desc: 'Proactive coordination, reporting, and comprehensive post-project documentation.', color: 'border-emerald-600' },
+  { icon: ShieldAlert, title: 'Safety Services', desc: 'Fire infrastructure systems, PPE supply, and full-scale safety installations.', color: 'border-[#0072BB]' },
+  { icon: Truck, title: 'Logistics', desc: 'Supply of industrial materials, equipment leasing, and general contractor services.', color: 'border-[#0072BB]' },
+  { icon: GraduationCap, title: 'HSE Training', desc: 'Behaviour-Based Safety, fire drills, and emergency preparedness training.', color: 'border-[#F39C12]' },
+  { icon: Building2, title: 'Civil Works', desc: 'Structural erection, renovation, and general civil construction.', color: 'border-[#0072BB]' },
+  { icon: HardHat, title: 'Project Management', desc: 'Proactive coordination, reporting, and comprehensive post-project documentation.', color: 'border-[#0072BB]' },
 ];
 
 const metrics = [
@@ -44,7 +44,17 @@ export default function Home() {
   return (
     <div className="flex flex-col w-full">
       {/* Hero Reel */}
-      <section className="relative h-screen min-h-[600px] flex items-center bg-[linear-gradient(rgba(49,59,68,0.85)_0%,rgba(49,59,68,0.85)_100%),repeating-linear-gradient(45deg,#313B44_0px,#313B44_10px,#232B32_10px,#232B32_20px)] overflow-hidden pt-20">
+      <section className="relative h-screen min-h-[600px] flex items-center overflow-hidden pt-20">
+        {/* Dynamic Industrial Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ 
+            backgroundImage: `url("https://images.pexels.com/photos/36794532/pexels-photo-36794532.jpeg")` 
+          }}
+        />
+        {/* Expertly blended gradient wash overlay to protect text legibility and match light base tone */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent md:from-white md:via-white/85 md:to-white/25" />
+
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -52,20 +62,20 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="max-w-[600px]"
           >
-            <h1 className="text-[42px] md:text-[56px] font-bold text-white tracking-tight leading-[1.1] mb-[15px]">
+            <h1 className="text-[42px] md:text-[56px] font-bold text-[#111111] tracking-tight leading-[1.1] mb-[15px]">
               Leading EPC Solutions for Nigeria’s Industrial Future
             </h1>
-            <p className="text-[16px] text-white/90 mb-[25px] leading-[1.5] max-w-xl font-medium">
+            <p className="text-[16px] text-[#334155] mb-[25px] leading-[1.5] max-w-xl font-medium">
               Specializing in Engineering, Procurement, and Construction across Oil & Gas, Petrochemicals, and FMCG sectors. Delivering quality through state-of-the-art technology.
             </p>
             <div className="flex flex-wrap items-center gap-4">
-              <Link to="/contact-us" className="px-[28px] py-[12px] bg-[#F39C12] hover:bg-white text-[#313B44] rounded-[2px] font-bold text-[14px] uppercase transition-all flex items-center gap-2 border-none w-fit">
+              <Link to="/contact-us" className="px-[28px] py-[12px] bg-[#0072BB] hover:bg-[#1E293B] hover:text-[#FFFFFF] text-white rounded-[2px] font-bold text-[14px] uppercase transition-all flex items-center gap-2 border-none w-fit">
                 Request a Quote
               </Link>
             </div>
           </motion.div>
         </div>
-        <div className="hidden md:block absolute right-[60px] bottom-[40px] opacity-10 text-[120px] font-black text-white pointer-events-none select-none tracking-tighter leading-none">
+        <div className="hidden md:block absolute right-[60px] bottom-[40px] opacity-[0.06] text-[120px] font-black text-[#111111] pointer-events-none select-none tracking-tighter leading-none z-10">
           EPC
         </div>
       </section>
@@ -86,10 +96,10 @@ export default function Home() {
                 <span className={cn("text-[10px] uppercase font-bold mb-[8px] block tracking-wide", service.color.replace('border-', 'text-'))}>
                   {service.title}
                 </span>
-                <h3 className="text-[18px] font-bold text-[#313B44] mb-[10px]">{service.title}</h3>
+                <h3 className="text-[18px] font-bold text-[#111111] mb-[10px]">{service.title}</h3>
                 <p className="text-[13px] leading-[1.6] text-[#666] m-0">{service.desc}</p>
                 <div className="mt-6">
-                  <Link to="/what-we-do" className="inline-flex items-center gap-1.5 text-[12px] font-bold uppercase text-[#313B44] hover:text-[#F39C12] transition-colors tracking-wide">
+                  <Link to="/what-we-do" className="inline-flex items-center gap-1.5 text-[12px] font-bold uppercase text-[#111111] hover:text-[#111111] transition-colors tracking-wide">
                     Learn more <ArrowRight size={14} />
                   </Link>
                 </div>
@@ -105,7 +115,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-around items-center py-6 md:py-0 md:h-[80px] gap-6 md:gap-0">
             {metrics.map((metric, idx) => (
               <div key={metric.label} className="text-center">
-                <span className="text-[28px] font-black text-[#313B44] block leading-none mb-1">
+                <span className="text-[28px] font-black text-[#111111] block leading-none mb-1">
                   {counters[idx]}{metric.suffix}
                 </span>
                 <span className="text-[11px] uppercase text-[#666] tracking-[1px] font-medium block">
@@ -122,11 +132,11 @@ export default function Home() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <div className="max-w-xl">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#313B44] mb-4">Featured Projects</h2>
-              <div className="w-16 h-1 bg-[#0072BB] mb-6"></div>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#111111] mb-4">Featured Projects</h2>
+              <div className="w-16 h-1 bg-[#F39C12] mb-6"></div>
               <p className="text-gray-600">Delivering structural and civil excellence to top-tier clients across Nigeria.</p>
             </div>
-            <Link to="/projects" className="px-6 py-3 border border-[#313B44] text-[#313B44] hover:bg-[#313B44] hover:text-white transition-colors font-medium">
+            <Link to="/projects" className="px-6 py-3 border border-[#F39C12] text-[#111111] hover:bg-white hover:text-[#111111] transition-colors font-medium">
               View All Projects
             </Link>
           </div>
@@ -147,9 +157,9 @@ export default function Home() {
               >
                 <img src={p.img} alt={p.title} className="w-full h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-40 transition-all duration-700" />
                 <div className="absolute inset-0 p-8 flex flex-col justify-end bg-gradient-to-t from-black/80 to-transparent">
-                  <span className="text-[#F39C12] text-sm font-bold mb-2 uppercase tracking-wider">{p.subtitle}</span>
-                  <h3 className="text-2xl font-bold text-white mb-4">{p.title}</h3>
-                  <Link to="/projects" className="inline-flex items-center gap-2 text-white font-medium group-hover:text-[#0072BB] transition-colors">
+                  <span className="text-[#111111] text-sm font-bold mb-2 uppercase tracking-wider">{p.subtitle}</span>
+                  <h3 className="text-2xl font-bold text-[#111111] mb-4">{p.title}</h3>
+                  <Link to="/projects" className="inline-flex items-center gap-2 text-[#111111] font-medium group-hover:text-[#111111] transition-colors">
                     Explore Project <ArrowRight size={16} />
                   </Link>
                 </div>
@@ -160,7 +170,7 @@ export default function Home() {
       </section>
 
       {/* HSE Banner */}
-      <section className="py-20 bg-[#DA291C] text-white relative overflow-hidden">
+      <section className="py-20 bg-[#0072BB] text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white to-transparent"></div>
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <ShieldAlert className="w-16 h-16 mx-auto mb-6 opacity-90" />
@@ -170,11 +180,11 @@ export default function Home() {
             We protect the environment and safeguard every employee on site.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <div className="px-6 py-3 bg-white/10 rounded border border-white/20 flex items-center justify-center gap-2">
-              <CheckCircle2 size={18} className="text-[#F39C12]" /> ISO 9001:2000 Framework
+            <div className="px-6 py-3 bg-white/10 rounded border border-black/10 flex items-center justify-center gap-2">
+              <CheckCircle2 size={18} className="text-white" /> ISO 9001:2000 Framework
             </div>
-            <div className="px-6 py-3 bg-white/10 rounded border border-white/20 flex items-center justify-center gap-2">
-              <CheckCircle2 size={18} className="text-[#F39C12]" /> OHSAS 18001 Compliant
+            <div className="px-6 py-3 bg-white/10 rounded border border-black/10 flex items-center justify-center gap-2">
+              <CheckCircle2 size={18} className="text-white" /> OHSAS 18001 Compliant
             </div>
           </div>
         </div>
@@ -183,19 +193,19 @@ export default function Home() {
       {/* CTA Get In Touch */}
       <section className="py-24 bg-white relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-[#313B44] rounded-2xl p-8 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
-            <div className="absolute -right-20 -top-20 w-64 h-64 border-[40px] border-white/5 rounded-full"></div>
+          <div className="bg-white rounded-2xl p-8 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+            <div className="absolute -right-20 -top-20 w-64 h-64 border-[40px] border-[#F39C12]/5 rounded-full"></div>
             
             <div className="max-w-2xl relative z-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Partner with Quadrupletech</h2>
-              <p className="text-gray-300 text-lg">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#111111] mb-4">Partner with Quadrupletech</h2>
+              <p className="text-gray-700 text-lg">
                 Need a reliable EPC contractor for your next major industrial project? 
                 Let's discuss how we can execute it safely, on time, and on budget.
               </p>
             </div>
             
             <div className="flex-shrink-0 relative z-10 w-full md:w-auto">
-              <Link to="/contact-us" className="w-full md:w-auto text-center block px-8 py-4 bg-[#F39C12] hover:bg-white text-[#313B44] font-bold text-lg transition-all rounded shadow-lg hover:shadow-xl">
+              <Link to="/contact-us" className="w-full md:w-auto text-center block px-8 py-4 bg-[#0072BB] hover:bg-[#1E293B] hover:text-[#FFFFFF] text-white font-bold text-lg transition-all rounded shadow-lg hover:shadow-xl">
                 Get In Touch Today
               </Link>
             </div>

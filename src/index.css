@@ -4,18 +4,27 @@
 @theme {
   --font-sans: "Inter", system-ui, sans-serif;
   --font-display: "Outfit", system-ui, sans-serif;
-  --color-navy: #313B44;
-  --color-gold: #F39C12;
-  --color-red: #DA291C;
-  --color-sky: #0072BB;
+  --color-primary: #FFFFFF;
+  --color-secondary: #0072BB;
+  --color-accent: #F39C12;
+  --color-text: #1E293B;
   --color-gray: #F4F4F4;
 }
 
 body, html {
   font-family: var(--font-sans);
-  color: var(--color-navy);
+  color: var(--color-text);
+  background-color: var(--color-primary);
 }
 
 h1, h2, h3, h4, h5, h6, .font-display {
   font-family: var(--font-display);
+}
+
+.nav-glow {
+  transition: all 0.3s ease;
+}
+.nav-glow:hover {
+  color: #F39C12 !important;
+  text-shadow: 0 0 10px rgba(243, 156, 18, 0.7), 0 0 20px rgba(243, 156, 18, 0.4);
 }
