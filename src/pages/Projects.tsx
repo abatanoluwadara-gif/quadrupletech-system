@@ -18,10 +18,46 @@ const projects = [
     year: '2023' 
   },
   { id: 2, name: 'Dangote Cement Plant Facility', client: 'Dangote Cement', location: 'Gboko, Benue State', sector: 'Cement', scope: 'Facility upgrades, structural reinforcement, and safety infrastructure installation.', img: 'https://images.unsplash.com/photo-1581092334241-7bc56598c160?auto=format&fit=crop&w=600&q=80', year: '2022' },
-  { id: 3, name: 'BUA Cement Complex Expansion', client: 'BUA Cement', location: 'Okpella, Edo State', sector: 'Cement', scope: 'Piping, lagging of steam pipes, and civil foundational works.', img: 'https://images.unsplash.com/photo-1541888086425-d81bb19240f5?auto=format&fit=crop&w=600&q=80', year: '2023' },
-  { id: 4, name: 'Premium Edible Oil Production Unit', client: 'Premium Edible Oil (FMN)', location: 'Nigeria', sector: 'FMCG', scope: 'Installation of PU panels, stainless steel pipe fabrication, and corrosion control.', img: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=600&q=80', year: '2021' },
-  { id: 5, name: 'WACOT Rice Mill Electrical', client: 'WACOT Rice', location: 'Argungu, Kebbi State', sector: 'Agro-Allied', scope: 'Comprehensive electrical installation, cable tray routing, and LOTO safety training.', img: 'https://images.unsplash.com/photo-1549491763-90d5bc0e676d?auto=format&fit=crop&w=600&q=80', year: '2022' },
+  { 
+    id: 3, 
+    name: 'Soya Silo seed expansion project', 
+    client: 'FMN', 
+    location: 'Apapa, Lagos State', 
+    sector: 'Agro-Allied', 
+    scope: 'Installation of high-capacity storage silos, conveyor piping, and structural support works.', 
+    img: 'https://i.ibb.co/Y49jnFVf/FMN-soya-silo-seed.png',
+    imgs: [
+      'https://i.ibb.co/Y49jnFVf/FMN-soya-silo-seed.png',
+      'https://i.ibb.co/Jj9n0nwb/fmn-soya-silo-seed-2023-2024.png'
+    ],
+    year: '2023' 
+  },
+  { 
+    id: 4, 
+    name: 'Premium Edible Oil Production Unit', 
+    client: 'Premium Edible Oil (FMN)', 
+    location: 'Nigeria', 
+    sector: 'FMCG', 
+    scope: 'Installation of PU panels, stainless steel pipe fabrication, and corrosion control.', 
+    img: 'https://i.ibb.co/twjnPkBB/soya-seed-elevator.png',
+    imgs: [
+      'https://i.ibb.co/twjnPkBB/soya-seed-elevator.png',
+      'https://i.ibb.co/wNHKgL34/soya-seed-2.png'
+    ],
+    year: '2021' 
+  },
+  { id: 5, name: 'WACOT Rice Mill Electrical', client: 'WACOT Rice', location: 'Argungu, Kebbi State', sector: 'Agro-Allied', scope: 'Comprehensive electrical installation, cable tray routing, and LOTO safety training.', img: 'https://i.ibb.co/zWDLZmM0/wacot-arugumgu.png', year: '2022' },
   { id: 6, name: 'Dano Facility Fire Hydrant System', client: 'Dano', location: 'Lagos Free Trade Zone', sector: 'FMCG', scope: 'Design and installation of full fire hydrant network and CO2 suppression systems.', img: 'https://i.ibb.co/jvgSqT2w/ibeju-lekki-dano.png', year: '2024' },
+  { 
+    id: 7, 
+    name: 'Installation of fire alarm and detecting system at lebruni Agro', 
+    client: 'Lebruni Agro', 
+    location: 'Nigeria', 
+    sector: 'Agro-Allied', 
+    scope: 'Complete installation and commissioning of advanced fire alarm panel, multi-point optical detecting systems, and auxiliary safety indicators.', 
+    img: 'https://i.ibb.co/5XDrnPKN/lebruni-fire-system-2.png', 
+    year: '2024' 
+  },
 ];
 
 function ProjectImageSlider({ images, alt }: { images: string[]; alt: string }) {

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Linkedin, ArrowRight } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Facebook, Instagram, ArrowRight } from 'lucide-react';
 import Logo from './Logo';
 
 export default function Footer() {
@@ -74,8 +74,14 @@ export default function Footer() {
               </li>
             </ul>
             <div className="mt-8 flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#F39C12] hover:text-white transition-all">
+              <a href="#" aria-label="Facebook" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#F39C12] hover:text-white transition-all">
+                <Facebook size={20} />
+              </a>
+              <a href="#" aria-label="LinkedIn" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#F39C12] hover:text-white transition-all">
                 <Linkedin size={20} />
+              </a>
+              <a href="#" aria-label="Instagram" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#F39C12] hover:text-white transition-all">
+                <Instagram size={20} />
               </a>
             </div>
           </div>

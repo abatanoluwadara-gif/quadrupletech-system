@@ -61,6 +61,41 @@ export default function Sustainability() {
         {/* Certifications Grid */}
         <div className="mb-24">
           <h2 className="text-3xl font-bold text-[#111111] mb-8 text-center">Certifications & Alignments</h2>
+          
+          {/* Main CAC Certification Feature Showcase */}
+          <div id="cac-certification-showcase" className="mb-12 bg-neutral-50 border border-neutral-100 rounded-xl p-8 md:p-12">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
+              <div className="lg:col-span-5 flex justify-center">
+                <div className="relative bg-white p-4 rounded-lg shadow-sm border border-neutral-200/60 max-w-[340px] w-full">
+                  <div className="absolute -top-3 -right-3 bg-[#F39C12] text-[#111111] text-[9px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm z-10">
+                    Main Certification
+                  </div>
+                  <img 
+                    id="cac-certificate-img"
+                    src="https://i.ibb.co/BHdng8Xg/cac-certification.png" 
+                    alt="Corporate Affairs Commission (CAC) Certification" 
+                    className="w-full h-auto object-contain rounded hover:scale-[1.02] transition-transform duration-500"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+              </div>
+              <div id="cac-certification-details" className="lg:col-span-7">
+                <div className="flex items-center gap-2 mb-3">
+                  <Award className="text-[#0072BB]" size={20} />
+                  <span className="text-xs font-semibold text-[#0072BB] uppercase tracking-wider">Official CAC Registration</span>
+                </div>
+                <h3 className="text-2xl font-bold text-[#111111] mb-4">Federal Republic of Nigeria Incorporation</h3>
+                <div className="w-12 h-1 bg-[#F39C12] mb-6"></div>
+                <p className="text-[13px] text-gray-700 leading-relaxed font-sans mb-4">
+                  Prior to its incorporation by Federal Republic of Nigeria Corporate Affairs Commission (CAC), QUADRUPLE-TECH started as a small pipe and structural fitting firm since the year 2016, servicing the Oil & Gas sector in partnership with other companies where the CEO had a stake.
+                </p>
+                <p className="text-[13px] text-gray-700 leading-relaxed font-sans">
+                  Better equipped, QUADRUPLE-TECH continues to date to venture and reap its reward by participating in small to medium to large scale projects. Our success has been built on customer satisfaction and loyalty.
+                </p>
+              </div>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px]">
             {certs.map((cert) => (
               <div key={cert.name} className={`p-[25px] border ${cert.active ? 'border-[#0072BB] bg-white border-t-[4px]' : 'border-[#ddd] bg-[#F4F4F4] border-dashed border-t-[4px] border-t-gray-300'} transition-all hover:shadow-md`}>
