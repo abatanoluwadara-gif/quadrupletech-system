@@ -20,14 +20,30 @@ export default function WhoWeAre() {
   return (
     <div className="pt-24 pb-20 bg-white">
       {/* Hero */}
-      <div className="relative h-[400px] mb-20 bg-white flex items-center justify-center overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="About Us" className="absolute inset-0 w-full h-full object-cover opacity-20" />
-        <div className="relative z-10 text-center px-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-[#111111] mb-4">Who We Are</h1>
-          <div className="w-16 h-1 bg-[#F39C12] mx-auto"></div>
-          <p className="mt-4 text-xl text-[#111111] font-medium max-w-2xl mx-auto">
-            Executing EPC contracts using the latest state-of-the-art technology.
-          </p>
+      <div className="relative h-[400px] mb-20 bg-slate-950 flex items-center justify-center overflow-hidden">
+        <img 
+          src="https://i.ibb.co/ynWwK5c6/pexels-govin-mu-2897273-17166070.jpg" 
+          alt="About Us" 
+          className="absolute inset-0 w-full h-full object-cover opacity-50 scale-105" 
+          referrerPolicy="no-referrer"
+        />
+        {/* Deep gradient overlay layer for optimum text contrast and readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/45 to-slate-950/70" />
+        
+        <div className="relative z-10 text-center px-4 max-w-3xl">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-4 uppercase drop-shadow-sm">
+              Who We Are
+            </h1>
+            <div className="w-24 h-1 bg-[#F39C12] mx-auto rounded-full shadow-sm"></div>
+            <p className="mt-6 text-lg md:text-xl text-slate-100 font-medium max-w-2xl mx-auto leading-relaxed drop-shadow">
+              Executing EPC contracts using the latest state-of-the-art technology.
+            </p>
+          </motion.div>
         </div>
       </div>
 

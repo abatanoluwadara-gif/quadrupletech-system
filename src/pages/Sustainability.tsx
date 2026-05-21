@@ -12,17 +12,30 @@ const certs = [
 export default function Sustainability() {
   return (
     <div className="pt-24 pb-20 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+      {/* Hero Header Section */}
+      <div className="relative h-[480px] mb-20 bg-slate-950 flex items-center justify-center overflow-hidden">
+        <img 
+          src="https://i.ibb.co/rG2RwX4v/pexels-njeromin-12314551.jpg" 
+          alt="Sustainability & HSE Hero" 
+          className="absolute inset-0 w-full h-full object-cover opacity-45 scale-105 select-none pointer-events-none" 
+          referrerPolicy="no-referrer"
+        />
+        {/* Soft elegant gradient backdrop */}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/45 to-slate-950/75" />
         
-        {/* Header */}
-        <div className="text-center mb-20">
-          <ShieldAlert className="w-16 h-16 text-[#111111] mx-auto mb-6" />
-          <h1 className="text-4xl md:text-5xl font-bold text-[#111111] mb-4">Sustainability & HSE</h1>
-          <div className="w-16 h-1 bg-[#F39C12] mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+        <div className="relative z-10 text-center px-4 sm:px-8 max-w-5xl">
+          <ShieldAlert className="w-16 h-16 text-[#F39C12] mx-auto mb-6 drop-shadow-md" />
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-4 uppercase drop-shadow-sm">
+            Sustainability &amp; HSE
+          </h1>
+          <div className="w-28 h-1 bg-[#F39C12] mx-auto rounded-full mb-6 shadow-sm"></div>
+          <p className="text-lg md:text-xl lg:text-2xl text-slate-100 font-medium max-w-3xl mx-auto leading-relaxed drop-shadow">
             Zero Damage. Every Project. We build the future responsibly, prioritizing the safety of our people and the protection of the environment.
           </p>
         </div>
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
 
         {/* IOC Explainer */}
         <div className="bg-[#1E293B] text-white p-[40px] md:p-[60px] mb-20 flex flex-col lg:flex-row gap-[40px] items-center border-t-4 border-[#F39C12]">

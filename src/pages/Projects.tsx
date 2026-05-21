@@ -158,26 +158,49 @@ export default function Projects() {
     : projects.filter(p => p.sector === activeCategory);
 
   return (
-    <div className="pt-24 pb-20 bg-white min-h-screen">
+    <div className="pt-24 pb-20 bg-gray-50 min-h-screen">
+      {/* Hero Header Section */}
+      <div className="relative h-[420px] mb-12 bg-slate-950 flex items-center justify-center overflow-hidden">
+        <img 
+          src="https://i.ibb.co/jZ60Jj0n/pexels-mike-van-schoonderwalt-1884800-5504388.jpg" 
+          alt="Our Portfolio Hero" 
+          className="absolute inset-0 w-full h-full object-cover opacity-50 scale-105 select-none pointer-events-none" 
+          referrerPolicy="no-referrer"
+        />
+        {/* Soft elegant gradient backdrop */}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/45 to-slate-950/75" />
+        
+        <div className="relative z-10 text-center px-4 sm:px-8 max-w-5xl">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-4 uppercase drop-shadow-sm">
+              Our Portfolio
+            </h1>
+            <div className="w-24 h-1 bg-[#F39C12] mx-auto rounded-full mb-6 shadow-sm"></div>
+            <p className="text-lg md:text-xl text-slate-100 font-medium max-w-3xl mx-auto leading-relaxed drop-shadow">
+              Proven delivery across Nigeria's most demanding industrial environments. We own our equipment, ensuring independence and reliability.
+            </p>
+          </motion.div>
+        </div>
+      </div>
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         
-        {/* Header Options */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 border-b pb-6">
-          <div>
-            <h1 className="text-4xl md:text-5xl font-bold text-[#111111] mb-4">Our Portfolio</h1>
-            <p className="text-gray-600 max-w-2xl">Proven delivery across Nigeria's most demanding industrial environments. We own our equipment, ensuring independence and reliability.</p>
-          </div>
-          
-            <div className="flex bg-white p-1 border border-[#eee] rounded-md shadow-sm self-start md:self-auto">
+        {/* Tab Switcher & Header Controls */}
+        <div className="flex justify-center md:justify-end mb-10 border-b pb-6">
+          <div className="flex bg-white p-1 border border-[#eee] rounded-md shadow-sm">
             <button 
               onClick={() => setActiveTab('projects')}
-              className={`px-6 py-2 font-bold text-[12px] uppercase tracking-wide transition-all border-none ${activeTab === 'projects' ? 'bg-[#0072BB] text-white shadow-sm rounded-sm' : 'text-[#666] hover:text-[#0072BB]'}`}
+              className={`px-6 py-2 font-bold text-[12px] uppercase tracking-wide transition-all border-none ${activeTab === 'projects' ? 'bg-[#0072BB]/90 text-white shadow-sm rounded-sm' : 'text-[#666] hover:text-[#0072BB]'}`}
             >
               Featured Projects
             </button>
             <button 
               onClick={() => setActiveTab('equipment')}
-              className={`px-6 py-2 font-bold text-[12px] uppercase tracking-wide transition-all border-none ${activeTab === 'equipment' ? 'bg-[#0072BB] text-white shadow-sm rounded-sm' : 'text-[#666] hover:text-[#0072BB]'}`}
+              className={`px-6 py-2 font-bold text-[12px] uppercase tracking-wide transition-all border-none ${activeTab === 'equipment' ? 'bg-[#0072BB]/90 text-white shadow-sm rounded-sm' : 'text-[#666] hover:text-[#0072BB]'}`}
             >
               Owned Equipment
             </button>

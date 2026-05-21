@@ -1,5 +1,6 @@
 import { Wrench, ShieldAlert, Truck, GraduationCap, Building2, HardHat, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { motion } from 'motion/react';
 
 const pillars = [
   {
@@ -97,14 +98,35 @@ export default function WhatWeDo() {
   return (
     <div className="pt-24 pb-20 bg-gray-50 min-h-screen">
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-[#111111] mb-4">What We Do</h1>
-          <div className="w-16 h-1 bg-[#F39C12] mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Providing comprehensive EPC services for procurement managers, project engineers, and operators at major industrial facilities.
-          </p>
+      {/* Hero Header Section */}
+      <div className="relative h-[420px] mb-20 bg-slate-950 flex items-center justify-center overflow-hidden">
+        <img 
+          src="https://i.ibb.co/rG2RwX4v/pexels-njeromin-12314551.jpg" 
+          alt="What We Do Hero Background" 
+          className="absolute inset-0 w-full h-full object-cover opacity-50 scale-105 select-none pointer-events-none" 
+          referrerPolicy="no-referrer"
+        />
+        {/* Soft elegant gradient backdrop */}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/45 to-slate-950/75" />
+        
+        <div className="relative z-10 text-center px-4 sm:px-8 max-w-5xl">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-4 uppercase drop-shadow-sm">
+              What We Do
+            </h1>
+            <div className="w-24 h-1 bg-[#F39C12] mx-auto rounded-full mb-6 shadow-sm"></div>
+            <p className="text-lg md:text-xl text-slate-100 font-medium max-w-3xl mx-auto leading-relaxed drop-shadow">
+              Providing comprehensive EPC services for procurement managers, project engineers, and operators at major industrial facilities.
+            </p>
+          </motion.div>
         </div>
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
 
         <div className="space-y-[30px] mb-20">
           {pillars.map((pillar, index) => (
