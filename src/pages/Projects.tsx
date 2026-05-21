@@ -1,15 +1,106 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Building2, Search, Filter } from 'lucide-react';
+import { Building2, Search, Filter, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const projects = [
-  { id: 1, name: 'Indorama Eleme Fertilizer & Petrochemical', client: 'Indorama', location: 'Rivers State, Nigeria', sector: 'Petrochemicals', scope: 'Civil and structural erection, performed with Ucho James Engineering Limited.', img: 'https://images.unsplash.com/photo-1579208035694-8ab34759089e?auto=format&fit=crop&w=600&q=80', year: '2023' },
+  { 
+    id: 1, 
+    name: 'Indorama Eleme Fertilizer & Petrochemical', 
+    client: 'Indorama', 
+    location: 'Rivers State, Nigeria', 
+    sector: 'Petrochemicals', 
+    scope: 'Civil and structural erection, performed with Ucho James Engineering Limited.', 
+    img: 'https://i.ibb.co/DFhdrMV/indorama-fertilizer.png',
+    imgs: [
+      'https://i.ibb.co/DFhdrMV/indorama-fertilizer.png',
+      'https://i.ibb.co/xtHCmK7m/home-logo-1.png'
+    ],
+    year: '2023' 
+  },
   { id: 2, name: 'Dangote Cement Plant Facility', client: 'Dangote Cement', location: 'Gboko, Benue State', sector: 'Cement', scope: 'Facility upgrades, structural reinforcement, and safety infrastructure installation.', img: 'https://images.unsplash.com/photo-1581092334241-7bc56598c160?auto=format&fit=crop&w=600&q=80', year: '2022' },
   { id: 3, name: 'BUA Cement Complex Expansion', client: 'BUA Cement', location: 'Okpella, Edo State', sector: 'Cement', scope: 'Piping, lagging of steam pipes, and civil foundational works.', img: 'https://images.unsplash.com/photo-1541888086425-d81bb19240f5?auto=format&fit=crop&w=600&q=80', year: '2023' },
   { id: 4, name: 'Premium Edible Oil Production Unit', client: 'Premium Edible Oil (FMN)', location: 'Nigeria', sector: 'FMCG', scope: 'Installation of PU panels, stainless steel pipe fabrication, and corrosion control.', img: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=600&q=80', year: '2021' },
   { id: 5, name: 'WACOT Rice Mill Electrical', client: 'WACOT Rice', location: 'Argungu, Kebbi State', sector: 'Agro-Allied', scope: 'Comprehensive electrical installation, cable tray routing, and LOTO safety training.', img: 'https://images.unsplash.com/photo-1549491763-90d5bc0e676d?auto=format&fit=crop&w=600&q=80', year: '2022' },
-  { id: 6, name: 'Dano Facility Fire Hydrant System', client: 'Dano', location: 'Lagos Free Trade Zone', sector: 'FMCG', scope: 'Design and installation of full fire hydrant network and CO2 suppression systems.', img: 'https://photos.fife.usercontent.google.com/pw/AP1GczNHVgJ8UoYGcbfIV9sMcLZh7G-KKu3QfTBEM65oNCoUb-x9RMKDdmGb=w503-h480-s-no-gm?authuser=0', year: '2024' },
+  { id: 6, name: 'Dano Facility Fire Hydrant System', client: 'Dano', location: 'Lagos Free Trade Zone', sector: 'FMCG', scope: 'Design and installation of full fire hydrant network and CO2 suppression systems.', img: 'https://i.ibb.co/jvgSqT2w/ibeju-lekki-dano.png', year: '2024' },
 ];
+
+function ProjectImageSlider({ images, alt }: { images: string[]; alt: string }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const prevSlide = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    e.preventDefault();
+    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+
+  const nextSlide = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    e.preventDefault();
+    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
+
+  return (
+    <div className="relative w-full h-full overflow-hidden group/slider text-white">
+      {/* Images container */}
+      <div className="relative w-full h-full bg-neutral-900">
+        {images.map((img, idx) => (
+          <div
+            key={img}
+            className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${
+              idx === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+            }`}
+          >
+            <img
+              src={img}
+              alt={`${alt} - Slide ${idx + 1}`}
+              className="w-full h-full object-cover transition-transform duration-700 opacity-90"
+            />
+          </div>
+        ))}
+      </div>
+
+      {/* Nav Controls */}
+      {images.length > 1 && (
+        <>
+          <button
+            onClick={prevSlide}
+            className="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-black/90 text-white p-1 rounded-full opacity-0 group-hover/slider:opacity-100 transition-opacity focus:outline-none"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft className="w-4 h-4" />
+          </button>
+          <button
+            onClick={nextSlide}
+            className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-black/90 text-white p-1 rounded-full opacity-0 group-hover/slider:opacity-100 transition-opacity focus:outline-none"
+            aria-label="Next slide"
+          >
+            <ChevronRight className="w-4 h-4" />
+          </button>
+
+          {/* Dots Indicator */}
+          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-20 flex gap-1.5 bg-black/40 px-2 py-1 rounded-full">
+            {images.map((_, idx) => (
+              <button
+                key={idx}
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  e.preventDefault();
+                  setCurrentIndex(idx);
+                }}
+                className={`w-1.5 h-1.5 rounded-full transition-all ${
+                  idx === currentIndex ? 'bg-white scale-125' : 'bg-white/50 hover:bg-white/80'
+                }`}
+                aria-label={`Go to slide ${idx + 1}`}
+              />
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
+
 
 const equipment = [
   { name: 'Industrial Welding Machines', type: 'Fabrication', qty: 24, spec: 'Miller / Lincoln Heavy Duty' },
@@ -93,7 +184,11 @@ export default function Projects() {
                       <div className="absolute top-4 left-4 bg-[#1E293B] px-[12px] py-[6px] text-[10px] font-bold text-white uppercase tracking-wider z-10">
                         {project.year}
                       </div>
-                      <img src={project.img} alt={project.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90" />
+                      {project.imgs && project.imgs.length > 0 ? (
+                        <ProjectImageSlider images={project.imgs} alt={project.name} />
+                      ) : (
+                        <img src={project.img} alt={project.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90" />
+                      )}
                     </div>
                     <div className="p-[25px]">
                       <div className="flex items-center gap-2 mb-[10px]">

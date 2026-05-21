@@ -54,7 +54,62 @@ export default function WhoWeAre() {
           </div>
           <div className="relative">
             <div className="absolute inset-0 bg-[#0072BB] translate-x-4 translate-y-4 rounded-lg"></div>
-            <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Team at site" className="relative z-10 rounded-lg shadow-xl w-full h-[400px] object-cover" />
+            <img src="https://i.ibb.co/xtHCmK7m/home-logo-1.png" alt="Team at site" className="relative z-10 rounded-lg shadow-xl w-full h-[400px] object-cover" />
+          </div>
+        </div>
+
+        {/* Our Mission Section */}
+        <div className="mb-24 bg-gray-50 border border-gray-100 rounded-xl p-8 md:p-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <div className="lg:col-span-5">
+              <div className="flex items-center gap-2 mb-4">
+                <Target className="text-[#0072BB]" size={28} />
+                <h2 className="text-3xl font-bold text-[#111111]">Our Mission</h2>
+              </div>
+              <div className="w-16 h-1 bg-[#F39C12] mb-6"></div>
+              <p className="text-sm font-semibold text-[#0072BB] uppercase tracking-wider mb-2">The Mission Statement</p>
+              <blockquote className="text-gray-600 text-[13px] leading-relaxed italic border-l-4 border-[#0072BB] pl-4 py-1">
+                "Our mission, by using our well-trained human, financial and intellectual resources in a teamwork environment, is to execute EPC contracts using the latest state of the art technology, to deliver on schedule competitively priced quality products, and to strive for continual improvements in quality, technology, safety and Customer’s satisfaction. Also, to perform all projects to the complete satisfaction of our customers in term of timing and cost. At the same time, we perform our work to the expectation of our international clients with respect to health and safety and security requirements."
+              </blockquote>
+            </div>
+            
+            <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-1 gap-6">
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="text-[#0072BB] font-black text-xs font-mono bg-blue-50 w-6 h-6 rounded-full flex items-center justify-center shrink-0">01</span>
+                    <h3 className="text-base font-bold text-[#111111] font-sans">Synergy &amp; Technology Integration</h3>
+                  </div>
+                  <p className="text-xs text-gray-600 leading-relaxed font-sans">
+                    By strategically leveraging our well-trained human, financial, and intellectual capital, we foster a collaborative, teamwork-driven environment. This synergy enables us to execute complex Engineering, Procurement, and Construction (EPC) contracts using the latest state-of-the-art technology, guaranteeing high-precision engineering solutions across all industrial operations.
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="text-[#0072BB] font-black text-xs font-mono bg-blue-50 w-6 h-6 rounded-full flex items-center justify-center shrink-0">02</span>
+                    <h3 className="text-base font-bold text-[#111111] font-sans">Timeline &amp; Cost-Value Precision</h3>
+                  </div>
+                  <p className="text-xs text-gray-600 leading-relaxed font-sans">
+                    We are dedicated to delivering all projects entirely on-schedule and as competitively priced, high-quality products. Through a relentless pursuit of operational excellence, we drive continual improvements in engineering precision, project execution, and client satisfaction while staying fully compliant with all timelines and budget constraints.
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="text-[#0072BB] font-black text-xs font-mono bg-blue-50 w-6 h-6 rounded-full flex items-center justify-center shrink-0">03</span>
+                    <h3 className="text-base font-bold text-[#111111] font-sans">Global QHSE Standards</h3>
+                  </div>
+                  <p className="text-xs text-gray-600 leading-relaxed font-sans">
+                    To satisfy the high expectations of our local and international clients, we uphold the most rigorous standards for health, safety, security, and environmental protection. Completing works to our clients' ultimate satisfaction is the absolute cornerstone of our professional ethics.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
