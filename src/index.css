@@ -28,3 +28,22 @@ h1, h2, h3, h4, h5, h6, .font-display {
   color: #F39C12 !important;
   text-shadow: 0 0 10px rgba(243, 156, 18, 0.7), 0 0 20px rgba(243, 156, 18, 0.4);
 }
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 2rem));
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 22s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}

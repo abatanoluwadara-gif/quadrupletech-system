@@ -1,8 +1,55 @@
 import React, { useState } from 'react';
-import { db, storage } from '../firebase';
+import { db, storage, auth } from '../firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 import { MapPin, Phone, Mail, UploadCloud, CheckCircle2 } from 'lucide-react';
+
+enum OperationType {
+  CREATE = 'create',
+  UPDATE = 'update',
+  DELETE = 'delete',
+  LIST = 'list',
+  GET = 'get',
+  WRITE = 'write',
+}
+
+interface FirestoreErrorInfo {
+  error: string;
+  operationType: OperationType;
+  path: string | null;
+  authInfo: {
+    userId?: string | null;
+    email?: string | null;
+    emailVerified?: boolean | null;
+    isAnonymous?: boolean | null;
+    tenantId?: string | null;
+    providerInfo?: {
+      providerId?: string | null;
+      email?: string | null;
+    }[];
+  }
+}
+
+function handleFirestoreError(error: unknown, operationType: OperationType, path: string | null) {
+  const errInfo: FirestoreErrorInfo = {
+    error: error instanceof Error ? error.message : String(error),
+    authInfo: {
+      userId: auth.currentUser?.uid || null,
+      email: auth.currentUser?.email || null,
+      emailVerified: auth.currentUser?.emailVerified || null,
+      isAnonymous: auth.currentUser?.isAnonymous || null,
+      tenantId: auth.currentUser?.tenantId || null,
+      providerInfo: auth.currentUser?.providerData?.map(provider => ({
+        providerId: provider.providerId,
+        email: provider.email,
+      })) || []
+    },
+    operationType,
+    path
+  };
+  console.error('Firestore Error details: ', JSON.stringify(errInfo));
+  throw new Error(JSON.stringify(errInfo));
+}
 
 export default function ContactUs() {
   const [formData, setFormData] = useState({
@@ -25,11 +72,44 @@ export default function ContactUs() {
       }
 
       setStatus('submitting');
-      await addDoc(collection(db, 'enquiries'), {
-        ...formData,
-        attachmentUrl,
+      
+      const payload = {
+        name: formData.name,
+        company: formData.company,
+        country: formData.country,
+        phone: formData.phone,
+        email: formData.email,
+        projectType: formData.projectType,
+        message: formData.message,
         createdAt: serverTimestamp()
-      });
+      } as any;
+
+      if (formData.budget) payload.budget = formData.budget;
+      if (formData.timeline) payload.timeline = formData.timeline;
+      if (attachmentUrl) payload.attachmentUrl = attachmentUrl;
+
+      try {
+        await addDoc(collection(db, 'enquiries'), payload);
+      } catch (err) {
+        handleFirestoreError(err, OperationType.WRITE, 'enquiries');
+      }
+
+      // Safe dispatch of brochure email response via backend server-side proxy
+      try {
+        await fetch('/api/send-brochure', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            projectType: formData.projectType,
+          }),
+        });
+      } catch (mailErr) {
+        console.error('Failed to trigger background brochure email helper:', mailErr);
+      }
 
       setStatus('success');
       setFormData({ name: '', company: '', country: '', phone: '', email: '', projectType: 'Engineering', budget: '', timeline: '', message: '' });

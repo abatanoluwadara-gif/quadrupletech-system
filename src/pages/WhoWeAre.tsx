@@ -1,11 +1,7 @@
 import { motion } from 'motion/react';
 import { Download, Users, Lightbulb, Target } from 'lucide-react';
 
-const management = [
-  { name: 'Engr. John Doe', title: 'Managing Director & CEO', bio: 'Over 20 years of EPC experience across sub-Saharan Africa.', img: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80' },
-  { name: 'Sarah Ahmed', title: 'Chief Operations Officer', bio: 'Specialist in procurement strategies and large-scale logistics.', img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80' },
-  { name: 'Michael Ojo', title: 'Head of Engineering', bio: 'Leads structural erection and civil engineering portfolios.', img: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80' },
-];
+
 
 const industries = [
   { title: 'Oil & Gas', desc: 'Rig maintenance, structural fabrication, and pipe installation for upstream and downstream sectors.' },
@@ -129,23 +125,7 @@ export default function WhoWeAre() {
           </div>
         </div>
 
-        {/* Management Team */}
-        <div className="mb-24">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-[#111111] mb-4">Our Management</h2>
-            <div className="w-16 h-1 bg-[#F39C12] mx-auto"></div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {management.map((m) => (
-              <motion.div key={m.name} whileHover={{ y: -5 }} className="bg-white border text-center p-8 shadow-sm">
-                <img src={m.img} alt={m.name} className="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-gray-50" />
-                <h3 className="text-xl font-bold text-[#111111] mb-2">{m.name}</h3>
-                <p className="text-[#111111] font-medium text-sm mb-4">{m.title}</p>
-                <p className="text-gray-500 text-sm">{m.bio}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+
 
         {/* Industries We Serve */}
         <div className="mb-24 bg-[#F4F4F4] p-8 md:p-12 border-t-4 border-[#0072BB]">
@@ -168,13 +148,48 @@ export default function WhoWeAre() {
         <div className="mb-24">
           <h2 className="text-3xl font-bold text-[#111111] mb-12 text-center">Trusted By</h2>
           
-          <div className="bg-white border rounded-xl overflow-hidden p-8 flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70 grayscale">
-            {/* Logos text placeholders if images aren't available */}
-            <span className="text-2xl font-black font-serif">INDORAMA</span>
-            <span className="text-2xl font-black text-gray-800">DANGOTE</span>
-            <span className="text-2xl font-black italic">BUA CEMENT</span>
-            <span className="text-2xl font-black text-blue-900">WACOT</span>
-            <span className="text-2xl font-black text-red-700">DANO</span>
+          <div className="relative w-full overflow-hidden bg-white border border-gray-100 rounded-2xl py-10 shadow-sm">
+            {/* Fade effect overlays for professional edges */}
+            <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+            
+            <div className="animate-marquee gap-20 items-center">
+              {/* Batch 1 */}
+              {[
+                { name: "Indorama", url: "https://i.ibb.co/mrf1yd1v/indorama.png" },
+                { name: "Dangote Cement", url: "https://i.ibb.co/9Hp6JLbt/dangote-cement.png" },
+                { name: "BUA Group", url: "https://i.ibb.co/21H4sz65/images.jpg" },
+                { name: "WACOT Rice", url: "https://i.ibb.co/TDTsqYy9/wacot.png" },
+                { name: "DANO Milk", url: "https://i.ibb.co/8LpB01CF/dano-logo.png" }
+              ].map((logo, idx) => (
+                <div key={`logo-set1-${idx}`} className="flex items-center justify-center shrink-0 w-28 md:w-36 h-16 transition-all duration-300 hover:scale-105 p-1 select-none pointer-events-none grayscale hover:grayscale-0 opacity-80 hover:opacity-100">
+                  <img 
+                    src={logo.url} 
+                    alt={logo.name} 
+                    className="max-h-full max-w-full object-contain"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+              ))}
+              
+              {/* Batch 2 (Identical duplicate for seamless looping) */}
+              {[
+                { name: "Indorama", url: "https://i.ibb.co/mrf1yd1v/indorama.png" },
+                { name: "Dangote Cement", url: "https://i.ibb.co/9Hp6JLbt/dangote-cement.png" },
+                { name: "BUA Group", url: "https://i.ibb.co/21H4sz65/images.jpg" },
+                { name: "WACOT Rice", url: "https://i.ibb.co/TDTsqYy9/wacot.png" },
+                { name: "DANO Milk", url: "https://i.ibb.co/8LpB01CF/dano-logo.png" }
+              ].map((logo, idx) => (
+                <div key={`logo-set2-${idx}`} className="flex items-center justify-center shrink-0 w-28 md:w-36 h-16 transition-all duration-300 hover:scale-105 p-1 select-none pointer-events-none grayscale hover:grayscale-0 opacity-80 hover:opacity-100">
+                  <img 
+                    src={logo.url} 
+                    alt={logo.name} 
+                    className="max-h-full max-w-full object-contain"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="mt-16 text-center max-w-3xl mx-auto">

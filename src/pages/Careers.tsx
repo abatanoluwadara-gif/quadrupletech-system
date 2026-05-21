@@ -1,9 +1,56 @@
 import React, { useState } from 'react';
-import { db, storage } from '../firebase';
+import { db, storage, auth } from '../firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 import { Briefcase, MapPin, UploadCloud, CheckCircle2 } from 'lucide-react';
 import { cn } from '../lib/utils';
+
+enum OperationType {
+  CREATE = 'create',
+  UPDATE = 'update',
+  DELETE = 'delete',
+  LIST = 'list',
+  GET = 'get',
+  WRITE = 'write',
+}
+
+interface FirestoreErrorInfo {
+  error: string;
+  operationType: OperationType;
+  path: string | null;
+  authInfo: {
+    userId?: string | null;
+    email?: string | null;
+    emailVerified?: boolean | null;
+    isAnonymous?: boolean | null;
+    tenantId?: string | null;
+    providerInfo?: {
+      providerId?: string | null;
+      email?: string | null;
+    }[];
+  }
+}
+
+function handleFirestoreError(error: unknown, operationType: OperationType, path: string | null) {
+  const errInfo: FirestoreErrorInfo = {
+    error: error instanceof Error ? error.message : String(error),
+    authInfo: {
+      userId: auth.currentUser?.uid || null,
+      email: auth.currentUser?.email || null,
+      emailVerified: auth.currentUser?.emailVerified || null,
+      isAnonymous: auth.currentUser?.isAnonymous || null,
+      tenantId: auth.currentUser?.tenantId || null,
+      providerInfo: auth.currentUser?.providerData?.map(provider => ({
+        providerId: provider.providerId,
+        email: provider.email,
+       })) || []
+    },
+    operationType,
+    path
+  };
+  console.error('Firestore Error details: ', JSON.stringify(errInfo));
+  throw new Error(JSON.stringify(errInfo));
+}
 
 const roles = [
   { id: '1', title: 'Senior Piping Engineer', loc: 'Lagos Free Zone / Field', type: 'Full-Time', desc: 'Lead pipe routing, fabrication design, and structural support engineering for FMCG clients.' },
@@ -29,13 +76,26 @@ export default function Careers() {
       const cvUrl = await getDownloadURL(uploadTask.ref);
 
       setStatus('submitting');
-      // Save Application to Firestore
-      await addDoc(collection(db, 'applications'), {
-        ...formData,
+      
+      const payload = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
         role: selectedRole,
         cvUrl,
         createdAt: serverTimestamp()
-      });
+      } as any;
+
+      if (formData.coverNote) {
+        payload.coverNote = formData.coverNote;
+      }
+
+      // Save Application to Firestore
+      try {
+        await addDoc(collection(db, 'applications'), payload);
+      } catch (err) {
+        handleFirestoreError(err, OperationType.WRITE, 'applications');
+      }
 
       setStatus('success');
       setFormData({ name: '', email: '', phone: '', coverNote: '' });

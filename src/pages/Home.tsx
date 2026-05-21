@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { ArrowRight, Wrench, ShieldAlert, Truck, GraduationCap, Building2, HardHat, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Wrench, ShieldAlert, Truck, GraduationCap, CheckCircle2 } from 'lucide-react';
 import { cn } from '../lib/utils';
 import { useEffect, useState } from 'react';
 
@@ -9,8 +9,6 @@ const services = [
   { icon: ShieldAlert, title: 'Safety Services', desc: 'Fire infrastructure systems, PPE supply, and full-scale safety installations.', color: 'border-[#0072BB]' },
   { icon: Truck, title: 'Logistics', desc: 'Supply of industrial materials, equipment leasing, and general contractor services.', color: 'border-[#0072BB]' },
   { icon: GraduationCap, title: 'HSE Training', desc: 'Behaviour-Based Safety, fire drills, and emergency preparedness training.', color: 'border-[#F39C12]' },
-  { icon: Building2, title: 'Civil Works', desc: 'Structural erection, renovation, and general civil construction.', color: 'border-[#0072BB]' },
-  { icon: HardHat, title: 'Project Management', desc: 'Proactive coordination, reporting, and comprehensive post-project documentation.', color: 'border-[#0072BB]' },
 ];
 
 const metrics = [
@@ -83,28 +81,44 @@ export default function Home() {
       {/* Services Overview */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px]">
-            {services.map((service, idx) => (
-              <motion.div 
-                key={service.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className={cn("bg-white p-[25px] border border-[#eee] border-t-[4px] relative flex flex-col hover:shadow-lg transition-all", service.color)}
-              >
-                <span className={cn("text-[10px] uppercase font-bold mb-[8px] block tracking-wide", service.color.replace('border-', 'text-'))}>
-                  {service.title}
-                </span>
-                <h3 className="text-[18px] font-bold text-[#111111] mb-[10px]">{service.title}</h3>
-                <p className="text-[13px] leading-[1.6] text-[#666] m-0">{service.desc}</p>
-                <div className="mt-6">
-                  <Link to="/what-we-do" className="inline-flex items-center gap-1.5 text-[12px] font-bold uppercase text-[#111111] hover:text-[#111111] transition-colors tracking-wide">
-                    Learn more <ArrowRight size={14} />
-                  </Link>
-                </div>
-              </motion.div>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[30px]">
+            {services.map((service, idx) => {
+              const ServiceIcon = service.icon;
+              return (
+                <motion.div 
+                  key={service.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="bg-white p-7 border border-gray-100 rounded-2xl relative flex flex-col hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden group shadow-sm"
+                >
+                  {/* Top accent highlight bar */}
+                  <div className={cn("absolute top-0 left-0 right-0 h-[5px]", service.color === 'border-[#F39C12]' ? 'bg-[#F39C12]' : 'bg-[#0072BB]')} />
+                  
+                  {/* Icon & Label */}
+                  <div className="flex items-center justify-between mb-5">
+                    <span className={cn("text-[11px] uppercase font-extrabold tracking-wider", service.color === 'border-[#F39C12]' ? 'text-[#F39C12]' : 'text-[#0072BB]')}>
+                      {service.title}
+                    </span>
+                    <div className={cn("p-2.5 rounded-xl transition-colors duration-350", 
+                      service.color === 'border-[#F39C12]' ? 'bg-[#F39C12]/10 text-[#F39C12] group-hover:bg-[#F39C12]/20' : 'bg-[#0072BB]/10 text-[#0072BB] group-hover:bg-[#0072BB]/20'
+                    )}>
+                      <ServiceIcon size={20} strokeWidth={2.2} />
+                    </div>
+                  </div>
+                  
+                  <h3 className="text-[19px] font-bold text-[#111111] mb-[12px] group-hover:text-[#0072BB] transition-colors duration-300">{service.title}</h3>
+                  <p className="text-[13.5px] leading-[1.6] text-[#555] m-0 flex-grow">{service.desc}</p>
+                  
+                  <div className="mt-6 pt-4 border-t border-gray-50">
+                    <Link to="/what-we-do" className="inline-flex items-center gap-1.5 text-[12px] font-bold uppercase text-[#111111] hover:text-[#0072BB] transition-all tracking-wider group-hover:gap-2.5">
+                      Learn more <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
+                    </Link>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -141,30 +155,40 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { title: "Indorama Eleme Fertilizer", subtitle: "Civil & Structural Erection", img: "https://images.unsplash.com/photo-1579208035694-8ab34759089e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
-              { title: "WACOT Rice, Argungu", subtitle: "Electrical Installation", img: "https://images.unsplash.com/photo-1549491763-90d5bc0e676d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
-              { title: "Dangote Cement, Gboko", subtitle: "Facility Upgrades", img: "https://images.unsplash.com/photo-1581092334241-7bc56598c160?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }
-            ].map((p, i) => (
-              <motion.div 
-                key={p.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.2 }}
-                className="group relative overflow-hidden h-[400px] bg-gray-900"
-              >
-                <img src={p.img} alt={p.title} className="w-full h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-40 transition-all duration-700" />
-                <div className="absolute inset-0 p-8 flex flex-col justify-end bg-gradient-to-t from-black/80 to-transparent">
-                  <span className="text-[#111111] text-sm font-bold mb-2 uppercase tracking-wider">{p.subtitle}</span>
-                  <h3 className="text-2xl font-bold text-[#111111] mb-4">{p.title}</h3>
-                  <Link to="/projects" className="inline-flex items-center gap-2 text-[#111111] font-medium group-hover:text-[#111111] transition-colors">
-                    Explore Project <ArrowRight size={16} />
+          <div className="w-full">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="group relative overflow-hidden h-[450px] bg-slate-950 rounded-lg shadow-md"
+            >
+              <img 
+                src="https://i.ibb.co/96T3t7x/pexels-mrgajowy3-teodor-2158318376-36181870.jpg" 
+                alt="Featured Projects Portfolio" 
+                className="w-full h-full object-cover opacity-60 group-hover:scale-[1.02] group-hover:opacity-50 transition-all duration-700 select-none pointer-events-none" 
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent">
+                <span className="text-[#F39C12] text-sm md:text-base font-bold mb-2 uppercase tracking-wider">
+                  Featured Project Deliveries
+                </span>
+                <h3 className="text-2xl md:text-4xl font-extrabold text-white mb-4 tracking-tight max-w-3xl leading-tight">
+                  High-Impact Industrial Infrastructure & Turnkey EPCC Solutions
+                </h3>
+                <p className="text-slate-200 max-w-2xl mb-6 text-sm md:text-base leading-relaxed hidden sm:block">
+                  Proven delivery of multi-disciplinary civil, structural engineering, mechanical pipe fabrication, and robust safety control networks for leading FMCG, oil & gas, and agro-allied manufacturers across Nigeria.
+                </p>
+                <div>
+                  <Link 
+                    to="/projects" 
+                    className="inline-flex items-center gap-2 bg-[#F39C12] hover:bg-[#d68a10] text-[#111111] font-bold px-6 py-3 rounded-sm transition-all shadow-md text-sm uppercase tracking-wider"
+                  >
+                    Explore Full Portfolio <ArrowRight size={18} />
                   </Link>
                 </div>
-              </motion.div>
-            ))}
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
