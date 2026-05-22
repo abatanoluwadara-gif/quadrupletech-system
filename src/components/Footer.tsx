@@ -68,8 +68,8 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0 text-white"><Mail size={14} /></div>
-                <a href="mailto:Quadrupletech036@gmail.com" className="hover:text-[#F39C12] transition-colors break-all">
-                  Quadrupletech036@gmail.com
+                <a href="mailto:techquadruple27@gmail.com" className="hover:text-[#F39C12] transition-colors break-all">
+                  techquadruple27@gmail.com
                 </a>
               </li>
             </ul>
@@ -103,7 +103,7 @@ export default function Footer() {
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-end justify-between gap-6 text-[12px] text-gray-500">
           <div className="space-y-1">
             <div><strong>Headquarters:</strong> 5 Ayegbami Street, Idotun, Lagos Free Zone, Ibeju-Lekki</div>
-            <div><strong>Contact:</strong> 09073463078 | Quadrupletech036@gmail.com</div>
+            <div><strong>Contact:</strong> 09073463078 | techquadruple27@gmail.com</div>
             <div>© {new Date().getFullYear()} Quadrupletech Engineering and Services Limited. All rights reserved.</div>
             <div className="text-gray-400">Built with Google Studio · Antigravity 3.0 · Firebase · Hosted on Nigerian CDN edge node</div>
           </div>

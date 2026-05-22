@@ -17,7 +17,6 @@ const projects = [
     ],
     year: '2023' 
   },
-  { id: 2, name: 'Dangote Cement Plant Facility', client: 'Dangote Cement', location: 'Gboko, Benue State', sector: 'Cement', scope: 'Facility upgrades, structural reinforcement, and safety infrastructure installation.', img: 'https://images.unsplash.com/photo-1581092334241-7bc56598c160?auto=format&fit=crop&w=600&q=80', year: '2022' },
   { 
     id: 3, 
     name: 'Soya Silo seed expansion project', 
@@ -56,6 +55,22 @@ const projects = [
     sector: 'Agro-Allied', 
     scope: 'Complete installation and commissioning of advanced fire alarm panel, multi-point optical detecting systems, and auxiliary safety indicators.', 
     img: 'https://i.ibb.co/5XDrnPKN/lebruni-fire-system-2.png', 
+    year: '2024' 
+  },
+  { 
+    id: 8, 
+    name: 'Installations of Dust Aspiration System at Premium Edible oil product limited (FMN) 2024', 
+    client: 'Premium Edible Oil Products Limited (FMN)', 
+    location: 'Nigeria', 
+    sector: 'FMCG', 
+    scope: 'Detailed engineering, structural support system fabrication, rigging, and complete installation and commissioning of the industrial Dust Aspiration System to control emissions and maintain indoor air quality.', 
+    img: 'https://i.ibb.co/DDrKB6Kt/Whats-App-Image-2026-05-20-at-4-45-25-AM.jpg',
+    imgs: [
+      'https://i.ibb.co/DDrKB6Kt/Whats-App-Image-2026-05-20-at-4-45-25-AM.jpg',
+      'https://i.ibb.co/Mx4Th7Xd/Whats-App-Image-2026-05-20-at-4-45-26-AM.jpg',
+      'https://i.ibb.co/SwsLzYdm/Whats-App-Image-2026-05-20-at-4-45-28-AM.jpg',
+      'https://i.ibb.co/xK1kgJWv/Whats-App-Image-2026-05-20-at-4-45-32-AM.jpg'
+    ],
     year: '2024' 
   },
 ];
@@ -147,7 +162,7 @@ const equipment = [
   { name: 'Mobile Cranes', type: 'Logistics', qty: 3, spec: '20-Ton to 50-Ton Capacity' },
 ];
 
-const categories = ['All', 'Petrochemicals', 'Cement', 'FMCG', 'Agro-Allied'];
+const categories = ['All', 'Petrochemicals', 'FMCG', 'Agro-Allied'];
 
 export default function Projects() {
   const [activeCategory, setActiveCategory] = useState('All');

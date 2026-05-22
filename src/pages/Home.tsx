@@ -194,21 +194,29 @@ export default function Home() {
       </section>
 
       {/* HSE Banner */}
-      <section className="py-20 bg-[#0072BB] text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white to-transparent"></div>
+      <section className="py-20 bg-neutral-950 text-white relative overflow-hidden border-t border-b border-white/5">
+        {/* Shiny Glossy Reflection & Radar Backlight */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.04] to-transparent pointer-events-none"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(243,156,18,0.08),transparent_70%)] pointer-events-none"></div>
+        {/* Metallic Linear Highlights */}
+        <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+        <div className="absolute inset-x-0 bottom-0 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+        
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <ShieldAlert className="w-16 h-16 mx-auto mb-6 opacity-90" />
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Zero Damage. Every Project.</h2>
-          <p className="text-lg text-white/90 max-w-2xl mx-auto mb-10 font-medium">
+          <ShieldAlert className="w-16 h-16 mx-auto mb-6 text-[#F39C12] filter drop-shadow-[0_0_15px_rgba(243,156,18,0.3)] animate-pulse" />
+          <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight uppercase bg-gradient-to-r from-white via-neutral-100 to-amber-500 bg-clip-text text-transparent">
+            Zero Damage. Every Project.
+          </h2>
+          <p className="text-lg text-slate-300 max-w-2xl mx-auto mb-10 font-medium leading-relaxed">
             Strict adherence to ISO 14001:2004 and OHSAS 18001:2007. 
-            We protect the environment and safeguard every employee on site.
+            We protect the environment and safeguard every employee on site with proactive risk assessments.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <div className="px-6 py-3 bg-white/10 rounded border border-black/10 flex items-center justify-center gap-2">
-              <CheckCircle2 size={18} className="text-white" /> ISO 9001:2000 Framework
+            <div className="px-8 py-4 bg-neutral-900/80 rounded-xl border border-white/10 backdrop-blur-md flex items-center justify-center gap-3 shadow-[0_4px_24px_rgba(0,0,0,0.5)] hover:border-[#F39C12]/40 hover:bg-neutral-900 transition-all duration-300">
+              <CheckCircle2 size={18} className="text-[#F39C12] shrink-0" /> <span className="text-sm font-semibold tracking-wide text-slate-200">ISO 9001:2000 Framework</span>
             </div>
-            <div className="px-6 py-3 bg-white/10 rounded border border-black/10 flex items-center justify-center gap-2">
-              <CheckCircle2 size={18} className="text-white" /> OHSAS 18001 Compliant
+            <div className="px-8 py-4 bg-neutral-900/80 rounded-xl border border-white/10 backdrop-blur-md flex items-center justify-center gap-3 shadow-[0_4px_24px_rgba(0,0,0,0.5)] hover:border-[#F39C12]/40 hover:bg-neutral-900 transition-all duration-300">
+              <CheckCircle2 size={18} className="text-[#F39C12] shrink-0" /> <span className="text-sm font-semibold tracking-wide text-slate-200">OHSAS 18001 Compliant</span>
             </div>
           </div>
         </div>

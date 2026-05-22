@@ -18,7 +18,7 @@ export default function WhoWeAre() {
       {/* Hero */}
       <div className="relative h-[400px] mb-20 bg-slate-950 flex items-center justify-center overflow-hidden">
         <img 
-          src="https://i.ibb.co/ynWwK5c6/pexels-govin-mu-2897273-17166070.jpg" 
+          src="https://i.ibb.co/PnfnmM4/pexels-harrun-muhammad-116282236-37198880.jpg" 
           alt="About Us" 
           className="absolute inset-0 w-full h-full object-cover opacity-50 scale-105" 
           referrerPolicy="no-referrer"
@@ -218,12 +218,9 @@ export default function WhoWeAre() {
                   </li>
                 ))}
               </ul>
-              <button className="flex items-center gap-2 bg-[#0072BB] hover:bg-[#1E293B] hover:text-[#FFFFFF] text-white font-bold px-[28px] py-[12px] rounded-sm transition-colors text-[14px] uppercase border-none">
-                <Download size={18} /> Download Quality PDF
-              </button>
             </div>
             <div className="hidden md:block">
-              <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Quality inspection" className="rounded-sm shadow-2xl opacity-90 border-[4px] border-[#E2E8F0]" />
+              <img src="https://i.ibb.co/bjZ6L2fB/pexels-shvetsa-5324967.jpg" alt="Quality inspection" className="rounded-sm shadow-2xl opacity-90 border-[4px] border-[#E2E8F0]" referrerPolicy="no-referrer" />
             </div>
           </div>
         </div>

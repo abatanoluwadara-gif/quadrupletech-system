@@ -97,6 +97,26 @@ export default function Careers() {
         handleFirestoreError(err, OperationType.WRITE, 'applications');
       }
 
+      // Safe dispatch of job application response and admin notification email via backend server-side proxy
+      try {
+        await fetch('/api/send-job-application', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            role: selectedRole,
+            cvUrl,
+            coverNote: formData.coverNote,
+          }),
+        });
+      } catch (mailErr) {
+        console.error('Failed to trigger background job application email helper:', mailErr);
+      }
+
       setStatus('success');
       setFormData({ name: '', email: '', phone: '', coverNote: '' });
       setFile(null);

@@ -104,7 +104,13 @@ export default function ContactUs() {
           body: JSON.stringify({
             name: formData.name,
             email: formData.email,
+            company: formData.company,
+            country: formData.country,
+            phone: formData.phone,
             projectType: formData.projectType,
+            budget: formData.budget,
+            timeline: formData.timeline,
+            message: formData.message,
           }),
         });
       } catch (mailErr) {
@@ -221,7 +227,7 @@ export default function ContactUs() {
                   <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center shrink-0 text-[#111111]"><Mail size={20} /></div>
                   <div>
                     <h4 className="font-bold text-sm text-gray-600 mb-1">Email Connect</h4>
-                    <a href="mailto:Quadrupletech036@gmail.com" className="block text-[#F4F4F4] hover:text-[#111111] break-all">Quadrupletech036@gmail.com</a>
+                    <a href="mailto:techquadruple27@gmail.com" className="block text-[#F4F4F4] hover:text-[#111111] break-all">techquadruple27@gmail.com</a>
                   </div>
                 </div>
               </div>

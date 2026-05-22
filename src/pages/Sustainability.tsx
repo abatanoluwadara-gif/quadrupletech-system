@@ -1,4 +1,5 @@
-import { ShieldAlert, Award, FileText, LayoutDashboard, Globe } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { ShieldAlert, Award, FileText, LayoutDashboard, Globe, ChevronLeft, ChevronRight, Flame } from 'lucide-react';
 
 const certs = [
   { name: 'ISO 9001:2000', label: 'Quality Management', active: true, desc: 'Ensuring global quality standards across all procurement and fabrication processes.' },
@@ -10,12 +11,26 @@ const certs = [
 ];
 
 export default function Sustainability() {
+  const asenwareImages = [
+    "https://i.ibb.co/gbcQrw14/asenware-2.png",
+    "https://i.ibb.co/xKJdN0Q1/asenware.jpg",
+    "https://i.ibb.co/FCg1XBb/fire-system-lebruni.png"
+  ];
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % asenwareImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [asenwareImages.length]);
+
   return (
     <div className="pt-24 pb-20 bg-white">
       {/* Hero Header Section */}
       <div className="relative h-[480px] mb-20 bg-slate-950 flex items-center justify-center overflow-hidden">
         <img 
-          src="https://i.ibb.co/rG2RwX4v/pexels-njeromin-12314551.jpg" 
+          src="https://i.ibb.co/4ZP6CMn8/pexels-govin-mu-2897273-17166070.jpg" 
           alt="Sustainability & HSE Hero" 
           className="absolute inset-0 w-full h-full object-cover opacity-45 scale-105 select-none pointer-events-none" 
           referrerPolicy="no-referrer"
@@ -127,7 +142,93 @@ export default function Sustainability() {
             ))}
           </div>
         </div>
+      </div> {/* Close Certifications Grid Container */}
 
+      {/* Full-width Asenware Fire Systems Section */}
+      <section className="relative w-full h-[520px] bg-slate-950 flex items-center overflow-hidden my-24 group">
+        {/* Animated Slide Elements */}
+        {asenwareImages.map((img, idx) => (
+          <div 
+            key={img}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              idx === activeSlide ? 'opacity-40 scale-100' : 'opacity-0 scale-105'
+            } transform transition-transform duration-[5000ms]`}
+          >
+            <img 
+              src={img} 
+              alt={`Asenware Fire System Portfolio ${idx + 1}`} 
+              className="w-full h-full object-cover select-none pointer-events-none"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+        ))}
+
+        {/* Outer overlay for contrast and sleek styling */}
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-slate-950/20" />
+
+        {/* Slider Controls */}
+        <button 
+          onClick={() => setActiveSlide((prev) => (prev - 1 + asenwareImages.length) % asenwareImages.length)}
+          className="absolute left-6 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-[#F39C12] text-white hover:text-black p-3 rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 focus:opacity-100"
+          aria-label="Previous Slide"
+        >
+          <ChevronLeft size={24} />
+        </button>
+        <button 
+          onClick={() => setActiveSlide((prev) => (prev + 1) % asenwareImages.length)}
+          className="absolute right-6 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-[#F39C12] text-white hover:text-black p-3 rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 focus:opacity-100"
+          aria-label="Next Slide"
+        >
+          <ChevronRight size={24} />
+        </button>
+
+        {/* Content Overlay */}
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10 w-full">
+          <div className="max-w-2xl bg-slate-900/85 md:bg-slate-900/60 p-8 md:p-12 rounded-2xl border border-white/10 backdrop-blur-md shadow-2xl">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="p-2 bg-[#F39C12]/10 rounded-lg text-[#F39C12] flex items-center justify-center animate-pulse">
+                <Flame size={20} className="fill-[#F39C12]/20" />
+              </span>
+              <span className="text-[#F39C12] text-xs font-extrabold uppercase tracking-widest">
+                Technical Mastery &amp; Integration
+              </span>
+            </div>
+            
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6 tracking-tight leading-tight">
+              Asenware Fire Safety Systems
+            </h2>
+            
+            <div className="w-16 h-1 bg-[#F39C12] mb-6 rounded-full" />
+            
+            <div className="space-y-4">
+              <p className="text-sm md:text-base text-gray-100 leading-relaxed font-sans font-medium">
+                Our certified expertise in internationally acclaimed Asenware addressable networks enables proactive, real-time fire detection and immediate fail-safe alarms.
+              </p>
+              <p className="text-sm md:text-base text-gray-300 leading-relaxed font-sans">
+                These advanced platforms are selected to deliver full safety compliance and precise hazard management across high-risk manufacturing and industrial sectors.
+              </p>
+            </div>
+
+            {/* Pagination Indicators */}
+            <div className="flex items-center gap-2 mt-8">
+              {asenwareImages.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setActiveSlide(idx)}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    idx === activeSlide ? 'w-8 bg-[#F39C12]' : 'w-2 bg-white/40 hover:bg-white/70'
+                  }`}
+                  aria-label={`Go to slide ${idx + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* New container to resume page layout elements */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         {/* Community Relations */}
         <div className="bg-[#F4F4F4] border-t-[4px] border-[#E2E8F0] p-[40px] md:p-[60px] mb-12">
           <div className="max-w-3xl mx-auto text-center">
