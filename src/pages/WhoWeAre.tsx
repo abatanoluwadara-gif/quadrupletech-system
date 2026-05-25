@@ -50,7 +50,7 @@ export default function WhoWeAre() {
           <div>
             <h2 className="text-3xl font-bold text-[#111111] mb-6">Our Narrative</h2>
             <p className="text-gray-600 mb-4 leading-relaxed">
-              Founded in 2016, <strong>Quadrupletech Engineering and Services Limited</strong> is a CAC-incorporated EPC (Engineering, Procurement, and Construction) firm headquartered at 5 Ayegbami Street, Idotun, Lagos Free Zone, Ibeju-Lekki, Lagos.
+              Founded in 2016, <strong>Quadrupletech Engineering and Services Limited</strong> is a CAC-incorporated EPC (Engineering, Procurement, Fire Infrastructure System, and Construction) firm headquartered at 5 Ayegbami Street, Idotun, Lagos Free Zone, Ibeju-Lekki, Lagos.
             </p>
             <p className="text-gray-600 mb-6 leading-relaxed">
               Our mission is simple: to execute complex EPC contracts using state-of-the-art technology, delivering on schedule, and providing competitively priced quality products. Over the years, we have built a reputation for zero-harm operations and uncompromising structural integrity across Nigeria's industrial landscape.

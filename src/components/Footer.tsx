@@ -59,9 +59,14 @@ export default function Footer() {
               Get In Touch
             </h4>
             <ul className="space-y-4 text-sm text-gray-300">
-              <li className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0 text-white"><Phone size={14} /></div>
+              <li className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0 text-[#F39C12] mt-1"><Phone size={14} /></div>
                 <div>
+                  <div className="text-[10px] uppercase tracking-wider font-bold text-slate-400">Direct Hotline</div>
+                  <a href="tel:+2348164373669" className="block text-white font-bold hover:text-[#F39C12] transition-colors text-[15px]">0816 437 3669</a>
+                  
+                  <div className="text-[10px] uppercase tracking-wider font-bold text-slate-400 mt-2">Additional Lines</div>
+                  <a href="tel:+2347076457528" className="block hover:text-[#F39C12] transition-colors">0707 645 7528</a>
                   <a href="tel:+2349073463078" className="block hover:text-[#F39C12] transition-colors">0907 346 3078</a>
                   <a href="tel:+2348026125351" className="block hover:text-[#F39C12] transition-colors">0802 612 5351</a>
                 </div>
@@ -103,7 +108,7 @@ export default function Footer() {
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-end justify-between gap-6 text-[12px] text-gray-500">
           <div className="space-y-1">
             <div><strong>Headquarters:</strong> 5 Ayegbami Street, Idotun, Lagos Free Zone, Ibeju-Lekki</div>
-            <div><strong>Contact:</strong> 09073463078 | techquadruple27@gmail.com</div>
+            <div><strong>Contact Hotline:</strong> 08164373669 | <strong>Alternate:</strong> 07076457528 · 09073463078 | techquadruple27@gmail.com</div>
             <div>© {new Date().getFullYear()} Quadrupletech Engineering and Services Limited. All rights reserved.</div>
             <div className="text-gray-400">Built with Google Studio · Antigravity 3.0 · Firebase · Hosted on Nigerian CDN edge node</div>
           </div>

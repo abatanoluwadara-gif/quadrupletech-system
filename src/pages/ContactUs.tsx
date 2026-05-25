@@ -216,10 +216,14 @@ export default function ContactUs() {
                 <div className="flex gap-4">
                   <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center shrink-0 text-[#111111]"><Phone size={20} /></div>
                   <div>
-                    <h4 className="font-bold text-sm text-gray-600 mb-1">Contact Numbers</h4>
+                    <h4 className="font-bold text-sm text-gray-600 mb-1">Contact Lines</h4>
+                    <div className="text-[10px] uppercase font-bold text-slate-400">Direct Hotline:</div>
+                    <a href="tel:+2348164373669" className="block text-white font-black hover:text-[#111111] mb-2 text-base">0816 437 3669</a>
+                    
+                    <div className="text-[10px] uppercase font-bold text-slate-400">Additional Lines:</div>
+                    <a href="tel:+2347076457528" className="block text-[#F4F4F4] hover:text-[#111111] mb-1">0707 645 7528</a>
                     <a href="tel:+2349073463078" className="block text-[#F4F4F4] hover:text-[#111111] mb-1">0907 346 3078</a>
                     <a href="tel:+2348026125351" className="block text-[#F4F4F4] hover:text-[#111111] mb-1">0802 612 5351</a>
-                    <a href="tel:+2348164373669" className="block text-[#F4F4F4] hover:text-[#111111]">0816 437 3669</a>
                   </div>
                 </div>
 
@@ -241,17 +245,70 @@ export default function ContactUs() {
         </div>
       </div>
 
-      {/* Map */}
-      <div className="w-full h-[400px] bg-slate-200">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m3!1d15858.115822606558!2d3.8967922137943543!3d6.438596644837599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf4eaab5ba2ef%3A0xe7585ebf7d7acba4!2sIbeju%20Lekki%2C%20Lagos!5e0!3m2!1sen!2sng!4v1716301382405!5m2!1sen!2sng" 
-          width="100%" 
-          height="100%" 
-          style={{ border: 0 }} 
-          allowFullScreen 
-          loading="lazy" 
-          referrerPolicy="no-referrer-when-downgrade"
-        ></iframe>
+      {/* Blog Post: EPC Firms' Contribution to Nigeria's Public & Private Sectors */}
+      <div className="w-full bg-slate-50 border-t border-slate-200/60 py-16 md:py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <article className="bg-white rounded-lg border border-slate-100 shadow-sm p-8 md:p-12">
+            <div className="flex items-center gap-2 mb-4">
+              <span className="px-2.5 py-1 bg-[#0072BB]/10 text-[#0072BB] text-[10px] font-bold uppercase tracking-widest rounded-full">
+                Industry Insights
+              </span>
+              <span className="text-xs text-slate-400 font-mono">May 2026</span>
+            </div>
+
+            <h2 className="text-2xl md:text-4xl font-extrabold text-[#111111] leading-tight mb-6 uppercase tracking-tight">
+              Powering Progress: How EPC Firms Catalyze Nigeria's Public and Private Sectors
+            </h2>
+
+            <div className="prose prose-slate max-w-none text-[#555555] text-[15px] leading-relaxed space-y-6">
+              <p className="font-medium text-slate-700 text-lg leading-relaxed">
+                In Nigeria's dynamic economic landscape, Engineering, Procurement, and Construction (EPC) firms act as critical engines of development. By bridging the gap between intricate design theory and heavy-duty physical reality, these specialized partners lay the backbone of the nation's industrial expansion, serving both governmental public programs and commercial private enterprises.
+              </p>
+
+              <div>
+                <h3 className="text-[16px] font-bold text-[#111111] mb-2 uppercase tracking-wide border-l-4 border-[#F39C12] pl-3">
+                  1. Developing Public Sector Infrastructure
+                </h3>
+                <p>
+                  In the public sector, EPC firms translate federal and state developmental visions into functional critical infrastructure. From constructing high-capacity gas-to-power energy piping systems to erecting aviation safety grids and modernizing public utilities, these firms help alleviate key logistic bottlenecks. By building gas stations, event multi-purpose halls, and public market infrastructure, they facilitate smooth domestic commerce and guarantee safety for millions of Nigerian households.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-[16px] font-bold text-[#111111] mb-2 uppercase tracking-wide border-l-4 border-[#F39C12] pl-3">
+                  2. Driving Private Sector Productivity &amp; Integrity
+                </h3>
+                <p>
+                  Within the private sphere, particularly across the FMCG, oil &amp; gas downstream, energy stations, restaurants, and heavy manufacturing sectors, EPC partners are vital for operational cost-efficiency. They fabricate bespoke steel support structures, install process equipment, and coordinate complex plant upgrades. This specialized execution allows private corporations to minimize waste, decrease supply chain friction, and maintain peak uptime under strict international quality guidelines.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-[16px] font-bold text-[#111111] mb-2 uppercase tracking-wide border-l-4 border-[#E11D48] pl-3">
+                  3. Local Capacity &amp; Lifesaving Safety Cultures
+                </h3>
+                <p>
+                  Beyond traditional steel and machinery, the true value of modern EPC operators lies in the standard-of-safety they enforce. Through active compliance with international guidelines and upskilling local technicians, they build resilient safety cultures. Setting up intelligent gas suppression systems, automated fire pumps, and early-warning detectors minimizes fire outbreaks, preventing business losses and ensuring the safe operation of private hotels, schools, and hostels.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-8 pt-8 border-t border-slate-100 flex items-center justify-between flex-wrap gap-4">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-[#0072BB]/5 rounded-full flex items-center justify-center text-[#0072BB]">
+                  <CheckCircle2 size={18} />
+                </div>
+                <div>
+                  <div className="text-xs font-bold text-slate-900 uppercase">Staff Editorial</div>
+                  <div className="text-[11px] text-slate-500 font-medium font-sans">Quadrupletech HSE &amp; Engineering Department</div>
+                </div>
+              </div>
+              <span className="text-xs font-mono font-bold text-slate-400 uppercase tracking-widest">
+                EPC • Nigeria • Growth
+              </span>
+            </div>
+          </article>
+        </div>
       </div>
     </div>
   );
