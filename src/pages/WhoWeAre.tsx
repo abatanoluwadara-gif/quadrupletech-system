@@ -160,7 +160,10 @@ export default function WhoWeAre() {
                 { name: "Dangote Cement", url: "https://i.ibb.co/9Hp6JLbt/dangote-cement.png" },
                 { name: "BUA Group", url: "https://i.ibb.co/21H4sz65/images.jpg" },
                 { name: "WACOT Rice", url: "https://i.ibb.co/TDTsqYy9/wacot.png" },
-                { name: "DANO Milk", url: "https://i.ibb.co/8LpB01CF/dano-logo.png" }
+                { name: "DANO Milk", url: "https://i.ibb.co/8LpB01CF/dano-logo.png" },
+                { name: "Partner Client 1", url: "https://i.ibb.co/Csmzk92d/Whats-App-Image-2026-05-25-at-7-19-44-AM-1.jpg" },
+                { name: "Partner Client 2", url: "https://i.ibb.co/rG93cHvd/Whats-App-Image-2026-05-25-at-7-19-44-AM-2.jpg" },
+                { name: "Partner Client 3", url: "https://i.ibb.co/39HdN83k/Whats-App-Image-2026-05-25-at-7-19-44-AM-3.jpg" }
               ].map((logo, idx) => (
                 <div key={`logo-set1-${idx}`} className="flex items-center justify-center shrink-0 w-28 md:w-36 h-16 transition-all duration-300 hover:scale-105 p-1 select-none pointer-events-none grayscale hover:grayscale-0 opacity-80 hover:opacity-100">
                   <img 
@@ -178,7 +181,10 @@ export default function WhoWeAre() {
                 { name: "Dangote Cement", url: "https://i.ibb.co/9Hp6JLbt/dangote-cement.png" },
                 { name: "BUA Group", url: "https://i.ibb.co/21H4sz65/images.jpg" },
                 { name: "WACOT Rice", url: "https://i.ibb.co/TDTsqYy9/wacot.png" },
-                { name: "DANO Milk", url: "https://i.ibb.co/8LpB01CF/dano-logo.png" }
+                { name: "DANO Milk", url: "https://i.ibb.co/8LpB01CF/dano-logo.png" },
+                { name: "Partner Client 1", url: "https://i.ibb.co/Csmzk92d/Whats-App-Image-2026-05-25-at-7-19-44-AM-1.jpg" },
+                { name: "Partner Client 2", url: "https://i.ibb.co/rG93cHvd/Whats-App-Image-2026-05-25-at-7-19-44-AM-2.jpg" },
+                { name: "Partner Client 3", url: "https://i.ibb.co/39HdN83k/Whats-App-Image-2026-05-25-at-7-19-44-AM-3.jpg" }
               ].map((logo, idx) => (
                 <div key={`logo-set2-${idx}`} className="flex items-center justify-center shrink-0 w-28 md:w-36 h-16 transition-all duration-300 hover:scale-105 p-1 select-none pointer-events-none grayscale hover:grayscale-0 opacity-80 hover:opacity-100">
                   <img 
