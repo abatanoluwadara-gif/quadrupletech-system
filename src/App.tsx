@@ -14,6 +14,7 @@ import Projects from './pages/Projects';
 import Sustainability from './pages/Sustainability';
 import Careers from './pages/Careers';
 import ContactUs from './pages/ContactUs';
+import FireSafetySystems from './pages/FireSafetySystems';
 
 export default function App() {
   return (
@@ -30,6 +31,7 @@ export default function App() {
             <Route path="/sustainability" element={<Sustainability />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/contact-us" element={<ContactUs />} />
+            <Route path="/fire-safety-systems" element={<FireSafetySystems />} />
           </Routes>
         </main>
         <Footer />

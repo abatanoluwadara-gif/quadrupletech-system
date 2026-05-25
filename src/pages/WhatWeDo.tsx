@@ -1,4 +1,4 @@
-import { Wrench, ShieldAlert, Truck, GraduationCap, Building2, HardHat, ArrowRight } from 'lucide-react';
+import { Wrench, ShieldAlert, Truck, GraduationCap, Building2, HardHat, ArrowRight, Flame } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 
@@ -17,6 +17,37 @@ const pillars = [
       'Lagging of steam pipes',
       'Installation of PU and rock wool panels',
       'Corrosion control & turnaround maintenance'
+    ]
+  },
+  {
+    id: 'installation-fabrication',
+    icon: Wrench,
+    title: 'Industrial Equipment Installation, Fabrication & Piping Works',
+    for: 'Manufacturing Plants | Heavy Industries | Refineries',
+    color: 'text-[#111111]',
+    bg: 'bg-[#F39C12]/10',
+    capabilities: [
+      'Leveling, precision alignment, and erection of heavy-duty industrial machineries',
+      'High-pressure utility piping network construction, routing, and hot tapping',
+      'Structural steel design, detailed welding, custom fabrication, and rigging',
+      'Installation of production lines, manufacturing plant equipment, and process upgrades',
+      'Comprehensive pipeline integrity inspections, structural repairs, and maintenance support'
+    ]
+  },
+  {
+    id: 'fire-suppression-detection',
+    icon: Flame,
+    title: 'Fire Infrastructure, Fighting & Detection Systems',
+    for: 'Industrial Hubs | Aviation | Commercial & Utilities',
+    color: 'text-[#E11D48]',
+    bg: 'bg-[#E11D48]/10',
+    capabilities: [
+      'Active Protection Systems: Erection, pipe connection, and maintenance of high-capacity Fire Pump Rooms, networks, sprinkler loops, and foam deluge equipment.',
+      'Specialized Gas Suppression: Setup of automated FM200, CO2, Novec 1230, and high-tech fire trace tubes for servers, control panels, and critical system rooms.',
+      'Manual Firefighting Equipment: Supply and certification of hydrant networks, cabinet enclosures, multi-class fire extinguishers, fire blankets, and fire balls.',
+      'Flame & Heat Shields: Custom installations of physical fire retardant walls and high-security fireproof/flameproof cabinets for emergency readiness.',
+      'Advanced Alarm Systems: Engineering of Very Early Warning Fire Alarm Systems, including Honeywell Gent and Asenware (Addressable and Conventional) platforms.',
+      'Multi-Criteria Intelligent Detection: Implementation of linear heat sensors, optical beam detectors, and specialized flame detection nodes in accordance with standard codes.'
     ]
   },
   {
@@ -155,13 +186,21 @@ export default function WhatWeDo() {
                   </ul>
                 </div>
                 
-                <div>
+                <div className="flex flex-wrap gap-4">
                   <Link 
                     to="/contact-us"
-                    className="inline-flex items-center gap-2 px-[20px] py-[10px] bg-white hover:bg-[#0072BB] hover:text-white text-[#111111] font-bold transition-colors text-[12px] uppercase tracking-wide group border-none"
+                    className="inline-flex items-center gap-2 px-[20px] py-[10px] bg-white hover:bg-[#0072BB] hover:text-white text-[#111111] font-bold transition-colors text-[12px] uppercase tracking-wide group border border-[#eee] hover:border-transparent"
                   >
                     Request a Quote <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                   </Link>
+                  {pillar.id === 'fire-suppression-detection' && (
+                    <Link 
+                      to="/fire-safety-systems"
+                      className="inline-flex items-center gap-2 px-[20px] py-[10px] bg-[#E11D48] text-white hover:bg-[#1E293B] font-bold transition-colors text-[12px] uppercase tracking-wide group border-none shadow-sm"
+                    >
+                      Asenware Fire Safety Systems &amp; HSE Details <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>

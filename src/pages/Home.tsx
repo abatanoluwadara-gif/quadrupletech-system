@@ -64,7 +64,7 @@ export default function Home() {
               Leading EPC Solutions for Nigeria’s Industrial Future
             </h1>
             <p className="text-[16px] text-[#334155] mb-[25px] leading-[1.5] max-w-xl font-medium">
-              Specializing in Engineering, Procurement, and Construction across Oil & Gas, Petrochemicals, and FMCG sectors. Delivering quality through state-of-the-art technology.
+              Specializing in Engineering, Procurement, Fire Infrastructure & Safety Services, and Construction across Oil & Gas, Petrochemicals, FMCG Sectors, Aviation Sector (Airport), Energy Stations, Petroleum and Gas Stations, Sport/Recreation and Entertainment Centres, Event & Multipurpose Halls, Warehouses, Large Market (Private & Public), Restaurants, Hotels, School and Hostels, Private & Public Sectors. Delivering quality through state-of-the-art technology. In Nigeria, Africa and Beyond
             </p>
             <div className="flex flex-wrap items-center gap-4">
               <Link to="/contact-us" className="px-[28px] py-[12px] bg-[#0072BB] hover:bg-[#1E293B] hover:text-[#FFFFFF] text-white rounded-[2px] font-bold text-[14px] uppercase transition-all flex items-center gap-2 border-none w-fit">
@@ -208,7 +208,7 @@ export default function Home() {
             Zero Damage. Every Project.
           </h2>
           <p className="text-lg text-slate-300 max-w-2xl mx-auto mb-10 font-medium leading-relaxed">
-            Strict adherence to ISO 14001:2004 and OHSAS 18001:2007. 
+            Strict adherence to ISO 14001:2004 and ISO 45001:2018 standard guidelines. 
             We protect the environment and safeguard every employee on site with proactive risk assessments.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -216,7 +216,7 @@ export default function Home() {
               <CheckCircle2 size={18} className="text-[#F39C12] shrink-0" /> <span className="text-sm font-semibold tracking-wide text-slate-200">ISO 9001:2000 Framework</span>
             </div>
             <div className="px-8 py-4 bg-neutral-900/80 rounded-xl border border-white/10 backdrop-blur-md flex items-center justify-center gap-3 shadow-[0_4px_24px_rgba(0,0,0,0.5)] hover:border-[#F39C12]/40 hover:bg-neutral-900 transition-all duration-300">
-              <CheckCircle2 size={18} className="text-[#F39C12] shrink-0" /> <span className="text-sm font-semibold tracking-wide text-slate-200">OHSAS 18001 Compliant</span>
+              <CheckCircle2 size={18} className="text-[#F39C12] shrink-0" /> <span className="text-sm font-semibold tracking-wide text-slate-200">ISO 45001:2018 Certified</span>
             </div>
           </div>
         </div>

@@ -4,7 +4,7 @@ import { ShieldAlert, Award, FileText, LayoutDashboard, Globe, ChevronLeft, Chev
 const certs = [
   { name: 'ISO 9001:2000', label: 'Quality Management', active: true, desc: 'Ensuring global quality standards across all procurement and fabrication processes.' },
   { name: 'ISO 14001:2004', label: 'Environmental Management', active: true, desc: 'Minimizing our environmental footprint and adhering to strict waste management.' },
-  { name: 'OHSAS 18001:2007', label: 'Occupational Health', active: true, desc: 'Safeguarding our workforce with zero-harm policies and proactive risk assessment.' },
+  { name: 'ISO 45001:2018', label: 'Occupational Health & Safety', active: true, desc: 'ISO 45001:2018 is the global standard for Occupational Health & Safety Management systems. It establishes a proactive framework for preventing work-related injuries, managing operational hazards, reducing site incidents, and continuously improving workforce safety.' },
   { name: 'CAC / RC 7398394', label: 'Corporate Registration', active: true, desc: 'Fully incorporated in Nigeria. TIN: 31668384-0001.' },
   { name: 'DPR Certification', label: 'Petroleum Resources', active: false, desc: 'Targeting compliance for direct upstream operations.' },
   { name: 'NCDMB', label: 'Nigerian Content', active: false, desc: 'Committed to local capacity building and technology transfer.' },
@@ -60,7 +60,7 @@ export default function Sustainability() {
               Multinational Oil & Gas operators (IOCs) and national operators (NOCs) in Nigeria require impeccable HSE records before awarding contracts. 
             </p>
             <p className="text-[14px] text-gray-300 mb-[30px] leading-[1.6]">
-              Quadrupletech's deep alignment with ISO and OHSAS frameworks ensures that our safety protocols integrate seamlessly into the overarching safety architecture of clients like Indorama and Dangote, preventing costly shutdowns and ensuring regulatory compliance.
+              Quadrupletech's deep alignment with ISO frameworks—including ISO 45001:2018 (Occupational Health & Safety), ISO 14001:2004 (Environmental Management), and ISO 9001:2000 (Quality Management)—ensures that our safety protocols integrate seamlessly into the overarching safety architecture of clients like Indorama and Dangote, preventing costly shutdowns and ensuring regulatory compliance.
             </p>
             <button className="flex items-center gap-2 px-[24px] py-[10px] bg-[#0072BB] hover:bg-[#1E293B] hover:text-[#FFFFFF] text-white font-bold transition-colors text-[12px] uppercase tracking-wide border-none">
               <FileText size={16} /> Download HSE Policy PDF
