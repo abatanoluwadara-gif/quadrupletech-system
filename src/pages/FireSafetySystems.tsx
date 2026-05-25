@@ -202,7 +202,7 @@ export default function FireSafetySystems() {
       {/* Hero Header Section */}
       <div className="relative h-[440px] mb-12 bg-slate-950 flex items-center justify-center overflow-hidden">
         <img 
-          src="https://images.unsplash.com/photo-1599707367072-cd6ada2bc375?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+          src="https://i.ibb.co/hJ176SYs/pexels-minasenishino-28910500.jpg" 
           alt="Fire Protection Systems and HSE Services banner" 
           className="absolute inset-0 w-full h-full object-cover opacity-50 scale-100 select-none pointer-events-none" 
           referrerPolicy="no-referrer"
