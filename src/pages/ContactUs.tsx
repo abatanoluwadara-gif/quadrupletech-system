@@ -237,9 +237,13 @@ export default function ContactUs() {
               </div>
             </div>
 
-            <a href="https://wa.me/2349073463078?text=Hello%20Quadrupletech" target="_blank" rel="noreferrer" className="w-full flex items-center justify-center gap-3 py-[18px] bg-[#25D366] text-[#111111] font-bold hover:bg-white transition-colors border-none uppercase tracking-wide text-[13px]">
-               Message on WhatsApp
-            </a>
+            <div className="bg-slate-100 border border-slate-200/60 p-6 flex flex-col items-center text-center rounded">
+              <span className="text-[10px] font-bold uppercase tracking-widest text-[#555555] mb-2">WhatsApp Direct Channel</span>
+              <span className="text-[18px] font-extrabold text-[#111111] mb-4">0816 437 3669</span>
+              <a href="https://wa.me/2348164373669?text=Hello%20Quadrupletech" target="_blank" rel="noreferrer" className="w-full flex items-center justify-center gap-3 py-[14px] bg-[#25D366] text-white font-bold hover:bg-[#111111] hover:text-white transition-colors border-none uppercase tracking-wider text-[12px] rounded shadow-sm">
+                 Message on WhatsApp
+              </a>
+            </div>
           </div>
 
         </div>
